@@ -1,0 +1,8 @@
+
+// Keyrir upp sass compilerinn og vegna þess að það er -w flag á í package.json þá er detectuð breyting
+npm run compile:sass
+
+// Refreshar browserinn þegar að breyting hefur átt sér stað. Sama hvaða file er breytt, meira segja þessum :o!
+live-server
+
+
