@@ -156,8 +156,9 @@ h2 {
     display: flex;
     height: 95vh;
     width: 100%;
-    background-image: linear-gradient(to right bottom, rgba($color_primary_light,0.8), rgba($color_primary_dark,0.8)) ,url('../img/hero-small.jpg');
+    background-image: linear-gradient(to right bottom, rgba($color_primary_light,0.8), rgba($color_primary_dark,0.8)) ,url('../Sara_Img/OnAMountain.jpg');
     background-size: cover;
+    background-position: 50% 50%;
     position:  relative;
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
@@ -919,6 +920,15 @@ h2 {
     }
 }
 
+@media screen and (max-width: 500px) {
+    .education__Section {
+        .title__TitleContainer {
+            .title__Title--first::after {
+                bottom: -4.4rem;
+            }
+        }
+    }
+}
 
 /*
     Reccommendations Section 

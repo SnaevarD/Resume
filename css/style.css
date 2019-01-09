@@ -107,8 +107,9 @@ h2 {
   display: flex;
   height: 95vh;
   width: 100%;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero-small.jpg");
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../Sara_Img/OnAMountain.jpg");
   background-size: cover;
+  background-position: 50% 50%;
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
   .header__logoBox {
