@@ -26,7 +26,8 @@ Dark green: #28b485
 */
 html {
   /* 10/16 = 0.625, 0.652 * 100 = 62.5% */
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  scroll-behavior: smooth; }
 
 body {
   padding: 3rem;
@@ -107,7 +108,7 @@ h2 {
   display: flex;
   height: 95vh;
   width: 100%;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../Sara_Img/OnAMountain.jpg");
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/IMG_20190321_164530.jpg");
   background-size: cover;
   background-position: 50% 50%;
   position: relative;
@@ -146,6 +147,9 @@ h2 {
       letter-spacing: 0.2rem;
       margin-bottom: 5px;
       opacity: 0.7; }
+      .navigation .navigation__list .navigation__element .navigation__link {
+        color: #FFF;
+        text-decoration: none; }
       .navigation .navigation__list .navigation__element:before, .navigation .navigation__list .navigation__element::after {
         content: '';
         position: absolute;
@@ -221,9 +225,9 @@ h2 {
     .portfolio__mainContainer .contactInformation__MainContainer .profileImage-_MainContainer {
       margin-top: 1.8rem;
       -ms-grid-column: 1;
-      -ms-grid-column-span: 1; }
+      -ms-grid-column-span: 1;
+      clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%); }
       .portfolio__mainContainer .contactInformation__MainContainer .profileImage-_MainContainer .profileImage__Container {
-        clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
         position: relative; }
         .portfolio__mainContainer .contactInformation__MainContainer .profileImage-_MainContainer .profileImage__Container::after {
           content: '';
@@ -302,7 +306,9 @@ h2 {
         margin-left: 1.5rem; }
         .portfolio__mainContainer .talents__MainContainer .languages__MainContainer .languages__Container .languages__Item .languages__Text {
           display: inline-block;
-          width: 10rem; }
+          width: 17rem; }
+        .portfolio__mainContainer .talents__MainContainer .languages__MainContainer .languages__Container .languages__Item .languages__Text--small {
+          font-size: 1.4rem; }
         .portfolio__mainContainer .talents__MainContainer .languages__MainContainer .languages__Container .languages__Item .languages__BoxContainer {
           display: inline-block; }
           .portfolio__mainContainer .talents__MainContainer .languages__MainContainer .languages__Container .languages__Item .languages__BoxContainer .languages__Box {
@@ -357,31 +363,37 @@ h2 {
 
 @media (max-width: 650px) {
   .titleContainer--MainText {
-    font-size: 4rem; }
+    font-size: 3rem; }
   .titleContainer--SecondText {
     font-size: 1.5rem; }
   .navigation {
     display: none; }
   .header {
-    background-position: 50% 50%; }
-  .portfolio__mainContainer .contactInformation__MainContainer {
-    display: flex;
-    grid-column: 1/4;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 3; }
-  .portfolio__mainContainer .aboutMe__MainContainer {
-    grid-column: 1/4;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 3;
-    -ms-grid-row: 3; }
-  .portfolio__mainContainer .talents__MainContainer {
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 3;
-    -ms-grid-row: 5; }
-    .portfolio__mainContainer .talents__MainContainer .skills__MainContainer {
-      grid-column: 1/3; }
-    .portfolio__mainContainer .talents__MainContainer .languages__MainContainer {
-      grid-column: 1/3; } }
+    background-position: 50% 50%;
+    height: 30vh; }
+    .header .header__textBox {
+      height: 100%; }
+  .portfolio__mainContainer {
+    margin-top: 0;
+    padding-top: 4rem; }
+    .portfolio__mainContainer .contactInformation__MainContainer {
+      display: flex;
+      grid-column: 1/4;
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 3; }
+    .portfolio__mainContainer .aboutMe__MainContainer {
+      grid-column: 1/4;
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 3;
+      -ms-grid-row: 3; }
+    .portfolio__mainContainer .talents__MainContainer {
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 3;
+      -ms-grid-row: 5; }
+      .portfolio__mainContainer .talents__MainContainer .skills__MainContainer {
+        grid-column: 1/3; }
+      .portfolio__mainContainer .talents__MainContainer .languages__MainContainer {
+        grid-column: 1/3; } }
 
 /*
     Titles styles
@@ -468,11 +480,14 @@ h2 {
           padding: 0 3rem;
           transition: all 0.3s;
           color: #3a3a3a;
-          position: relative; }
+          position: relative;
+          margin-right: 3rem; }
           .timeline__Section .timeline__MainContainer .timeline__ItemContainer .timeline__Item .timeline__ItemTitle .timeline__ItemTitle__ToDate {
             position: absolute;
             bottom: -0.5rem;
-            font-size: 1.5rem; }
+            right: 0;
+            font-size: 1.5rem;
+            width: 7rem; }
         .timeline__Section .timeline__MainContainer .timeline__ItemContainer .timeline__Item .timeline__textContainer .timeline__textTitle {
           color: #3a3a3a;
           font-size: 2rem;
@@ -480,7 +495,7 @@ h2 {
           margin-bottom: 1rem; }
 
 /* Media Query for timeline section */
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 700px) {
   .timeline__Section .timeline__MainContainer {
     padding: 0rem; }
     .timeline__Section .timeline__MainContainer::after {
@@ -504,8 +519,60 @@ h2 {
         border-color: transparent #FFF transparent transparent; } }
 
 @media screen and (max-width: 435px) {
-  .timeline__Section .title__TitleContainer .title__Title--first::after {
+  .interests__Section .title__TitleContainer .title__Title--first::after {
     bottom: -4.3rem; } }
+
+/*
+    OtherProjects List
+*/
+.otherProjects__ListContainer {
+  margin-top: 3rem;
+  padding-left: 2rem; }
+  .otherProjects__ListContainer .otherProjects__List {
+    list-style: none; }
+    .otherProjects__ListContainer .otherProjects__List .otherProjects__Item {
+      position: relative;
+      font-size: 1.6rem;
+      margin: 0.5rem 0; }
+      .otherProjects__ListContainer .otherProjects__List .otherProjects__Item::before {
+        content: '';
+        position: absolute;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+        z-index: 1;
+        background-color: #28b485;
+        border-color: #FFF;
+        top: 1.2rem;
+        left: -2rem; }
+      .otherProjects__ListContainer .otherProjects__List .otherProjects__Item a {
+        text-decoration: none;
+        color: #777;
+        position: relative;
+        padding-bottom: 3px; }
+        .otherProjects__ListContainer .otherProjects__List .otherProjects__Item a::before {
+          content: '';
+          position: absolute;
+          transition: transform .5s ease;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 2px;
+          background: #28b485;
+          transform: scaleX(0); }
+        .otherProjects__ListContainer .otherProjects__List .otherProjects__Item a::after {
+          content: '';
+          position: absolute;
+          transition: transform .5s ease; }
+        .otherProjects__ListContainer .otherProjects__List .otherProjects__Item a:hover {
+          color: #28b485;
+          opacity: 1; }
+          .otherProjects__ListContainer .otherProjects__List .otherProjects__Item a:hover::before {
+            transform: scaleX(1); }
+
+@media screen and (max-width: 435px) {
+  .otherProjects__ListContainer {
+    margin-top: 8rem; } }
 
 /* 
     Education Section
@@ -617,9 +684,18 @@ h2 {
       .education__Section .education__MainContainer .education__Item .education__InfoContainer {
         width: 100%; } }
 
+@media screen and (max-width: 500px) {
+  .education__Section .title__TitleContainer .title__Title--first::after {
+    bottom: -4.4rem; } }
+
 /*
     Reccommendations Section 
 */
+.recommendations__Text {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 1rem; }
+
 .recommendations__Section {
   max-width: 120rem;
   padding-top: 8rem;
@@ -804,6 +880,9 @@ h2 {
           padding: 2.5rem 0 0.5rem 0;
           margin: 0;
           text-align: center; }
+          .interests__Section .interests__MainContainer .interests__Item .interests__Item__Content .interests__Item__Title .interests__Item__Link {
+            text-decoration: none;
+            color: #FFF; }
           .interests__Section .interests__MainContainer .interests__Item .interests__Item__Content .interests__Item__Title.twoLines {
             padding: 0rem 0 0.5rem 0; }
           .interests__Section .interests__MainContainer .interests__Item .interests__Item__Content .interests__Item__Title::after {

@@ -1,7 +1,7 @@
 {
-  "name": "natours",
+  "name": "Resume",
   "version": "1.0.0",
-  "description": "Landing page for natours",
+  "description": "Resume",
   "main": "index.js",
   "scripts": {
     "compile:sass": "node-sass sass/main.scss css/style.css -w"

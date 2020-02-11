@@ -54,6 +54,7 @@ $color_fuchsiaPink: #EE82EE;
 html {
     /* 10/16 = 0.625, 0.652 * 100 = 62.5% */
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -156,7 +157,7 @@ h2 {
     display: flex;
     height: 95vh;
     width: 100%;
-    background-image: linear-gradient(to right bottom, rgba($color_primary_light,0.8), rgba($color_primary_dark,0.8)) ,url('../Sara_Img/OnAMountain.jpg');
+    background-image: linear-gradient(to right bottom, rgba($color_primary_light,0.8), rgba($color_primary_dark,0.8)) ,url('../img/IMG_20190321_164530.jpg');
     background-size: cover;
     background-position: 50% 50%;
     position:  relative;
@@ -202,6 +203,11 @@ h2 {
             letter-spacing: 0.2rem;
             margin-bottom: 5px;
             opacity: 0.7;
+
+            .navigation__link {
+                color: $color_white;
+                text-decoration: none;            
+            }
 
             &:before, &::after {
                 content: '';
@@ -305,8 +311,9 @@ h2 {
             margin-top: 1.8rem;
             -ms-grid-column: 1;
             -ms-grid-column-span: 1; 
+            clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
             .profileImage__Container {
-                clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+                
                 position: relative;
                 
                 &::after {
@@ -421,7 +428,10 @@ h2 {
                 .languages__Item {
                     .languages__Text {
                         display: inline-block;
-                        width: 10rem;
+                        width: 17rem;
+                    }
+                    .languages__Text--small {
+                        font-size: 1.4rem;
                     }
                     .languages__BoxContainer {
                         display: inline-block;
@@ -501,7 +511,7 @@ h2 {
 @media (max-width: 650px) {
 
     .titleContainer--MainText {
-        font-size: 4rem;
+        font-size: 3rem;
     }
 
     .titleContainer--SecondText {
@@ -514,9 +524,16 @@ h2 {
 
     .header {
         background-position: 50% 50%;
+        height: 30vh;
+
+        .header__textBox {
+            height: 100%;
+        }
     }
 
     .portfolio__mainContainer {
+        margin-top: 0;
+        padding-top: 4rem;
         .contactInformation__MainContainer {
             display: flex;
             grid-column: 1/4;
@@ -664,11 +681,14 @@ h2 {
                     transition: all 0.3s;
                     color: $color_black;
                     position: relative;
+                    margin-right: 3rem;
 
                     .timeline__ItemTitle__ToDate {
-                        position: absolute;                    
+                        position: absolute;
                         bottom: -0.5rem;
+                        right: 0;
                         font-size: 1.5rem;
+                        width: 7rem;
                     }
                 }
 
@@ -690,7 +710,7 @@ h2 {
 
 
 /* Media Query for timeline section */
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 700px) {
 
     .timeline__Section  {
         .timeline__MainContainer {
@@ -741,10 +761,83 @@ h2 {
 }
 
 @media screen and (max-width: 435px) {
-    .timeline__Section .title__TitleContainer .title__Title--first::after {
+    .interests__Section .title__TitleContainer .title__Title--first::after {
         bottom: -4.3rem;
     }
 }
+
+
+/*
+    OtherProjects List
+*/
+.otherProjects__ListContainer {
+    margin-top: 3rem;
+    padding-left: 2rem;
+
+    .otherProjects__List {
+        list-style: none;
+
+        .otherProjects__Item {
+            position: relative;
+            font-size: 1.6rem;
+            margin: 0.5rem 0;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 0.5rem;
+                height: 0.5rem;
+                border-radius: 50%;
+                z-index: 1;
+                background-color: #28b485;
+                border-color: #FFF;
+                top: 1.2rem;
+                left: -2rem;
+            }
+
+            a {
+                text-decoration: none;
+                color: #777;
+                position: relative;
+                padding-bottom: 3px;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    transition: transform .5s ease;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 2px;
+                    background: #28b485;
+                    transform: scaleX(0);
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    transition: transform .5s ease;
+                }
+
+                &:hover {
+                    color: #28b485;
+                    opacity: 1;
+
+                    &::before {
+                        transform: scaleX(1);
+                    }
+                }
+            }
+        }        
+    }
+}
+
+@media screen and (max-width: 435px) {
+    .otherProjects__ListContainer {
+        margin-top: 8rem;
+    }
+}
+
 
 
 /* 
@@ -934,10 +1027,17 @@ h2 {
     Reccommendations Section 
 */
 
+.recommendations__Text {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
 .recommendations__Section {
     max-width: 120rem;
     padding-top: 8rem;
     margin: 10rem auto;
+
 
     .recommendations__MainContainer {
         margin-top: 10rem;
@@ -1204,6 +1304,11 @@ h2 {
                     padding: 2.5rem 0 0.5rem 0;
                     margin: 0;
                     text-align: center;
+
+                    .interests__Item__Link {
+                        text-decoration: none;
+                        color: $color_white;
+                    }
 
                     &.twoLines {
                         padding: 0rem 0 0.5rem 0;
