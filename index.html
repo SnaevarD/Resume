@@ -17,31 +17,11 @@
         <link href="css/fontawesome-free-5.5.0-web/css/all.css" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
         <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+        <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
         
         <title>Snævar Dagur résumé</title>
     </head>
     <body>
-        <header class="header">
-            <div class="header__logoBox">
-                <!--<img src="img/logo-white.png">-->
-            </div>
-            <div class="header__textBox">
-                <h1 class="titleContainer"> 
-                    <span class="titleContainer--MainText first">Snævar</span>                                                                       
-                    <span class="titleContainer--MainText second">Dagur Pétursson</span>
-                    <span class="titleContainer--SecondText">Welcome to my résumé</span>
-                </h1>
-                <div class="navigation">
-                    <ul class="navigation__list">
-                        <li class="navigation__element"><a class="navigation__link" href="#main">About me</a></li>
-                        <li class="navigation__element"><a class="navigation__link" href="#main">Work Experience</a></li>
-                        <li class="navigation__element"><a class="navigation__link" href="#main">Work Timeline</a></li>
-                        <li class="navigation__element"><a class="navigation__link" href="#main">Education</a></li>
-                        <li class="navigation__element"><a class="navigation__link" href="#main">Reccommendations</a></li>
-                    </ul>
-                </div>
-            </div>
-        </header>
         <!-- Portfolio -->
         <main class="portfolio__mainContainer container" id="main">
             <section class="contactInformation__MainContainer">
@@ -75,42 +55,56 @@
             <section class="aboutMe__MainContainer">
                 <h2 class="aboutMe__Title segmentTitle">About me</h3>
                 <p class="aboutMe__Text">
-                    Software Developer with BSc degree in Computer Science, strong working background in programming & enthusiasm for using cutting-edge technologies.
-                    <br/>
-                    Productive in both team-based and self-directed project environments. 
-                    <br/>
-                    Articulate with professional communication skills while punctual and easy to work with. Highly disciplined due to long involvement in various sports
+                    Software Developer with a BSc in Computer Science and over 10 years of experience designing, developing, and maintaining software solutions across different industries, including e-commerce and cybersecurity. Responsibilities have included technical decision-making, coordinating development work, and ensuring successful project delivery. Comfortable working both independently and as part of a team, with strong problem-solving and communication skills. Driven by an interest in new technologies and continuously developing technical knowledge and skills.
                 </p>
+                <details class="aboutMe__Details">
+                    <summary class="aboutMe__Summary">Family</summary>
+                    <p class="aboutMe__Text">
+                        I live with my partner, Sigrún Gunnarsdóttir, who works as an Account Manager at Landsnet. Together, we have two children, Lára (born in 2021) and Gunnar Óliver (born in 2026).
+                    </p>
+                </details>
+                <details class="aboutMe__Details">
+                    <summary class="aboutMe__Summary">Interests &amp; Hobbies</summary>
+                    <p class="aboutMe__Text">
+                        I have a background in competitive swimming, having trained for 13 years and represented Iceland on the national team. I enjoy running, climbing, Brazilian jiu jitsu (bjj), and have recently started exploring golf. In my spare time, I also enjoy various forms of gaming.
+                    </p>
+                </details>
             </section>
             <section class="talents__MainContainer">
                 <div class="skills__MainContainer">
                     <h2 class="skills__Title segmentTitle">Skills</h3>
                     <div class="skills__Container">
-                        <div class="skills__Item">
+                        <div class="skills__Item" tabindex="0" data-tooltip="Progressive JavaScript framework for building reactive, component-based user interfaces">
                             <p class="skills__Text">VueJS</p>
                         </div>
-                        <div class="skills__Item">
+                        <div class="skills__Item" tabindex="0" data-tooltip="Vue meta-framework adding server-side rendering, file-based routing and static site generation">
+                            <p class="skills__Text">Nuxt</p>
+                        </div>
+                        <div class="skills__Item" tabindex="0" data-tooltip="JavaScript library from Meta for building user interfaces out of reusable components">
                             <p class="skills__Text">ReactJS</p>
                         </div>
-                        <div class="skills__Item">
+                        <div class="skills__Item" tabindex="0" data-tooltip="Google's MVC framework for building dynamic single-page web applications">
                             <p class="skills__Text">AngularJS</p>
                         </div>
-                        <div class="skills__Item">
+                        <div class="skills__Item" tabindex="0" data-tooltip="Typed superset of JavaScript that catches errors at compile time and scales to large codebases">
+                            <p class="skills__Text">TypeScript</p>
+                        </div>
+                        <div class="skills__Item" tabindex="0" data-tooltip="Microsoft's statically typed, object-oriented language for .NET back-end development">
                             <p class="skills__Text">C#</p>
                         </div>
-                        <div class="skills__Item">
+                        <div class="skills__Item" tabindex="0" data-tooltip="CSS preprocessor adding variables, nesting and mixins for maintainable stylesheets">
                             <p class="skills__Text">Sass</p>
                         </div>
-                        <div class="skills__Item">
+                        <div class="skills__Item" tabindex="0" data-tooltip="CSS preprocessor with variables, mixins and functions, compiled to plain CSS">
                             <p class="skills__Text">Less</p>
                         </div>
-                        <div class="skills__Item">
+                        <div class="skills__Item" tabindex="0" data-tooltip="All-in-one .NET platform for CMS, e-commerce and PIM, used to build webstores">
                             <p class="skills__Text">DynamicWeb</p>
                         </div>
-                        <div class="skills__Item">
+                        <div class="skills__Item" tabindex="0" data-tooltip="CRM system built by Advania, now rebranded as VEVA CMS">
                             <p class="skills__Text">LiSA</p>
                         </div>
-                        <div class="skills__Item">
+                        <div class="skills__Item" tabindex="0" data-tooltip="Microsoft SQL Server, a relational database management system">
                             <p class="skills__Text">MSSQL</p>
                         </div>
                         
@@ -136,16 +130,6 @@
                                 <span class="languages__Box active"></span>
                                 <span class="languages__Box active"></span>
                                 <span class="languages__Box active"></span>
-                                <span class="languages__Box"></span>
-                            </div>
-                        </div>
-                        <div class="languages__Item">
-                            <p class="languages__Text">Swedish</p>
-                            <div class="languages__BoxContainer">
-                                <span class="languages__Box active"></span>
-                                <span class="languages__Box"></span>
-                                <span class="languages__Box"></span>
-                                <span class="languages__Box"></span>
                                 <span class="languages__Box"></span>
                             </div>
                         </div>
@@ -257,17 +241,28 @@
         <section class="interests__Section">
             <div class="title__TitleContainer">
                 <h2 class="title__Title title__Title--first">Work Experience</h2>
-                <h3 class="title__Title title__Title--second">Major Projects</h3>
+                <h3 class="title__Title title__Title--second">Notable Projects</h3>
             </div>
             <div class="interests__MainContainer">
             <figure class="interests__Item">
-                    <div class="interests__Item__Img"></div>
+                    <div class="interests__Item__Img" style="background-image: url('img/aftra.png')"></div>
                     <figcaption class="interests__Item__Content">
                         <h2 class="interests__Item__Title"><a class="interests__Item__Link" href="https://aftra.io/">Aftra</a></h2>
                         <div class="interests__Item__Icon"><i class="fas fa-shield-alt"></i></div>
                         <ul class="interests__Item__List">
                             <li class="interests__Item__ListItem">Attack surface management platform</li>
                             <li class="interests__Item__ListItem">Continuous discovery & monitoring of external exposure</li>
+                        </ul>
+                    </figcaption>
+                </figure>
+            <figure class="interests__Item">
+                    <div class="interests__Item__Img" style="background-image: url('img/s4s.png')"></div>
+                    <figcaption class="interests__Item__Content">
+                        <h2 class="interests__Item__Title"><a class="interests__Item__Link" href="https://s4s.is/">S4S</a></h2>
+                        <div class="interests__Item__Icon"><i class="fas fa-shoe-prints"></i></div>
+                        <ul class="interests__Item__List">
+                            <li class="interests__Item__ListItem">One of Iceland's best-known webstores</li>
+                            <li class="interests__Item__ListItem">Multiple brand stores sharing a single cart</li>
                         </ul>
                     </figcaption>
                 </figure>
@@ -304,39 +299,6 @@
                 </figure>                
             </div>
         </section>
-
-        <section class="interests__Section">
-                <div class="title__TitleContainer">
-                    <h2 class="title__Title title__Title--first hidden">Work Experience</h2>
-                    <h3 class="title__Title title__Title--second">Associated Projects</h3>
-                </div>
-                <div class="otherProjects__ListContainer">
-                    <ul class="otherProjects__List">
-                        <li class="otherProjects__Item"><a href="https://arionbanki.is/">Arionbanki</a></li>
-                        <li class="otherProjects__Item"><a href="https://borgun.is/">Borgun</a></li>
-                        <li class="otherProjects__Item"><a href="https://ellingsen.is/">Ellingsen</a></li>
-                        <li class="otherProjects__Item"><a href="https://ekran.is/">Ekran</a></li>
-                        <li class="otherProjects__Item"><a href="https://fastus.is/">Fastus</a></li>
-                        <li class="otherProjects__Item"><a href="https://www.haestirettur.is/">Hæðstiréttur</a></li>
-                        <li class="otherProjects__Item"><a href="https://www.hjoladivinnuna.is/">Hjólað í vinnuna</a></li>
-                        <li class="otherProjects__Item"><a href="https://icepharma.is/">Icepharma</a></li>
-                        <li class="otherProjects__Item"><a href="https://lsos.is/">Landssamband slökkviliðs- og sjúkraflutningamanna</a></li>
-                        <li class="otherProjects__Item"><a href="https://ils.is/">Íbúðalánasjóður</a></li>
-                        <li class="otherProjects__Item"><a href="https://www.landspitali.is/">Landspitali</a></li>
-                        <li class="otherProjects__Item"><a href="http://www.mannvirkjastofnun.is/">Mannvirkjastofnun</a></li>
-                        <li class="otherProjects__Item"><a href="https://mos.is/">Mosfellsbær</a></li>
-                        <li class="otherProjects__Item"><a href="https://orkan.is/">Orkan</a></li>
-                        <li class="otherProjects__Item"><a href="https://pfs.is/">Póst- og fjarskiptastofnun</a></li>
-                        <li class="otherProjects__Item"><a href="https://www.sedlabanki.is/">Seðlabanki Íslands</a></li>
-                        <li class="otherProjects__Item"><a href="https://skeljungur.is/">Skeljungur</a></li>
-                        <li class="otherProjects__Item"><a href="https://skor.is/">Skór.is</a></li>
-                        <li class="otherProjects__Item"><a href="http://temp-sfr.hysing.is/">SFR</a></li>
-                        <li class="otherProjects__Item"><a href="https://tollur.is/">Skatturinn - Tollamál</a></li>
-                        <li class="otherProjects__Item"><a href="https://valitor.is /">Valitor</a></li>
-                    </ul>
-                </div>
-        </section>
-
         <!-- Work Experience -->
         <section class="timeline__Section">
             <div class="title__TitleContainer">
@@ -365,7 +327,7 @@
                 <div class="timeline__ItemContainer left">
                   <div class="timeline__Item">
                     <div class="timeline__textContainer">
-                        <p class="timeline__textTitle"></p>
+                        <p class="timeline__textTitle">Flensborg</p>
                         <p class="timeline__text">High School/Junior College with focus on Biology</p>
                     </div>
                     <h2 class="timeline__ItemTitle">2008 <span class="timeline__ItemTitle__ToDate">To 2012</span></h2>
@@ -381,5 +343,61 @@
             <h3 class="recommendations__Text">Available upon request</p>
         </section>
 
-    </body>
+        <script>
+            // Nudge skill tooltips sideways so they never run off the screen
+            document.querySelectorAll('.skills__Item').forEach(function (item) {
+                function fit() {
+                    var rect = item.getBoundingClientRect();
+                    var half = parseFloat(getComputedStyle(item, '::after').width) / 2;
+                    var center = rect.left + rect.width / 2;
+                    var gap = 8;
+                    var shift = Math.min(0, window.innerWidth - gap - (center + half)) + Math.max(0, gap - (center - half));
+                    item.style.setProperty('--tipShift', shift + 'px');
+                }
+                item.addEventListener('mouseenter', fit);
+                item.addEventListener('focus', fit);
+            });
+
+            // Smoothly expand/collapse the About me subsections
+            var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+            document.querySelectorAll('.aboutMe__Details').forEach(function (details) {
+                var content = details.querySelector('.aboutMe__Text');
+                var heightAnim = null;
+                var fadeAnim = null;
+                var closing = false;
+
+                details.querySelector('summary').addEventListener('click', function (e) {
+                    if (reduceMotion.matches) return;
+                    e.preventDefault();
+
+                    var start = details.offsetHeight;
+                    var opening = !details.open || closing;
+                    if (heightAnim) heightAnim.cancel();
+                    if (fadeAnim) fadeAnim.cancel();
+
+                    details.open = false;
+                    var closedHeight = details.offsetHeight;
+                    details.open = true;
+                    var openHeight = details.offsetHeight;
+
+                    closing = !opening;
+                    details.style.overflow = 'hidden';
+                    var timing = { duration: 400, easing: 'cubic-bezier(0.4, 0, 0.2, 1)' };
+                    heightAnim = details.animate({ height: [start + 'px', (opening ? openHeight : closedHeight) + 'px'] }, timing);
+                    fadeAnim = content.animate({
+                        opacity: opening ? [0, 1] : [1, 0],
+                        transform: opening ? ['translateY(-0.6rem)', 'none'] : ['none', 'translateY(-0.6rem)']
+                    }, Object.assign({ fill: 'both' }, timing));
+
+                    heightAnim.onfinish = function () {
+                        details.open = opening;
+                        details.style.overflow = '';
+                        closing = false;
+                        heightAnim = null;
+                        fadeAnim.cancel();
+                        fadeAnim = null;
+                    };
+                });
+            });
+        </script>    </body>
 </html>

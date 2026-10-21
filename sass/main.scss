@@ -55,6 +55,54 @@ html {
     /* 10/16 = 0.625, 0.652 * 100 = 62.5% */
     font-size: 62.5%;
     scroll-behavior: smooth;
+
+    // Faint diagonal lines drifting over the background blobs
+    &::after {
+        content: '';
+        position: fixed;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        z-index: -1;
+        pointer-events: none;
+        background-image: repeating-linear-gradient(45deg, rgba($color_primary_dark, 0.08) 0, rgba($color_primary_dark, 0.08) 1px, transparent 1px, transparent 40px);
+        -webkit-mask-image: radial-gradient(ellipse at center, #000 0%, transparent 60%);
+        mask-image: radial-gradient(ellipse at center, #000 0%, transparent 60%);
+        animation: my__BgLines 6s linear infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        &::after {
+            animation: none;
+        }
+    }
+
+    // Green glow along the top and bottom edges; the mask keeps the middle clear
+    &::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: -100vw;
+        width: 200vw;
+        height: 100vh;
+        z-index: -1;
+        pointer-events: none;
+        background-image:
+            radial-gradient(28vw 26vh at 30% 0, rgba($color_primary_light, 0.22), rgba($color_primary_light, 0.14) 35%, rgba($color_primary_light, 0.05) 65%, rgba($color_primary_light, 0)),
+            radial-gradient(26vw 26vh at 72% 100%, rgba($color_primary_dark, 0.2), rgba($color_primary_dark, 0.13) 35%, rgba($color_primary_dark, 0.045) 65%, rgba($color_primary_dark, 0));
+        background-size: 100vw 100vh;
+        background-repeat: repeat-x;
+        -webkit-mask-image: linear-gradient(to bottom, #000, transparent 20%, transparent 80%, #000);
+        mask-image: linear-gradient(to bottom, #000, transparent 20%, transparent 80%, #000);
+        animation: my__BgEdges 60s linear infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        &::before {
+            animation: none;
+        }
+    }
 }
 
 body {
@@ -65,6 +113,45 @@ body {
     color: $color_grey_dark;
     background-color: darken($color_white, 0.6%);
     box-sizing: border-box;
+    overflow-x: clip;
+
+    // Subtle drifting background blobs
+    &::before,
+    &::after {
+        content: '';
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        // Confined to the side gutters so the glow never sits behind the 120rem content column
+        width: max(0px, calc((100vw - 120rem) / 2 - 2rem));
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: 100% 70vh;
+        pointer-events: none;
+    }
+
+    &::before {
+        left: 0;
+        background-image: radial-gradient(100% 50% at 0% 50%, rgba($color_primary_light, 0.28), rgba($color_primary_light, 0.18) 35%, rgba($color_primary_light, 0.06) 65%, rgba($color_primary_light, 0));
+        -webkit-mask-image: linear-gradient(to right, #000 40%, transparent);
+        mask-image: linear-gradient(to right, #000 40%, transparent);
+        animation: my__BgDriftOne 28s ease-in-out infinite alternate;
+    }
+
+    &::after {
+        right: 0;
+        background-image: radial-gradient(100% 50% at 100% 50%, rgba($color_primary_dark, 0.24), rgba($color_primary_dark, 0.15) 35%, rgba($color_primary_dark, 0.05) 65%, rgba($color_primary_dark, 0));
+        -webkit-mask-image: linear-gradient(to left, #000 40%, transparent);
+        mask-image: linear-gradient(to left, #000 40%, transparent);
+        animation: my__BgDriftTwo 34s ease-in-out infinite alternate;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        &::before,
+        &::after {
+            animation: none;
+        }
+    }
 }
 
 p {
@@ -310,32 +397,33 @@ h2 {
         .profileImage-_MainContainer {
             margin-top: 1.8rem;
             -ms-grid-column: 1;
-            -ms-grid-column-span: 1; 
+            -ms-grid-column-span: 1;
+            // Green line travelling around the border
+            padding: 0.4rem;
+            // Faint at rest, brightens on hover
+            --profileGlowLight: #{rgba($color_primary_light, 0.4)};
+            --profileGlowDark: #{rgba($color_primary_dark, 0.4)};
+            background: conic-gradient(from var(--profileBorderAngle), rgba($color_primary_dark, 0.25) 0deg, rgba($color_primary_dark, 0.25) 250deg, var(--profileGlowLight) 320deg, var(--profileGlowDark) 350deg, rgba($color_primary_dark, 0.25) 360deg);
+            animation: my__ProfileBorder 4s linear infinite;
+            transition: --profileGlowLight 0.6s ease, --profileGlowDark 0.6s ease;
             clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
-            .profileImage__Container {
-                
-                position: relative;
-                
-                &::after {
-                    content: '';
-                    background-color: #3a3a3a;
-                    height: 63rem;
-                    width: 100%;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    clip-path: polygon(0 0, 100% 0, 100% 76%, 0 100%);
-                    z-index: -1;
-                }
 
-                &:hover {
-                    .profileImage__Image {
-                        opacity: 0.6;
-                    }
-                }
+            &:hover {
+                --profileGlowLight: #{$color_primary_light};
+                --profileGlowDark: #{$color_primary_dark};
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                animation: none;
+            }
+
+            .profileImage__Container {
+
+                position: relative;
+                clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
 
                 .profileImage__Image {
-                    transition: all 0.3s;
+                    display: block;
                     width: 100%;
                 }
             }
@@ -392,6 +480,52 @@ h2 {
         .aboutMe__Text {
             margin-left: 1.5rem;
         }
+
+        // Collapsible subsections (Family, Interests & Hobbies)
+        .aboutMe__Details {
+            margin: 1.5rem 0 0 1.5rem;
+
+            .aboutMe__Text {
+                margin: 0.5rem 0 0 2.2rem;
+            }
+
+            &[open] {
+                .aboutMe__Summary::before {
+                    transform: rotate(45deg);
+                }
+            }
+        }
+
+        .aboutMe__Summary {
+            display: inline-flex;
+            align-items: center;
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: $color_black;
+            cursor: pointer;
+            list-style: none;
+            user-select: none;
+            transition: color 0.2s;
+
+            &::-webkit-details-marker {
+                display: none;
+            }
+
+            &::before {
+                content: '';
+                width: 0.7rem;
+                height: 0.7rem;
+                margin-right: 1.3rem;
+                border-right: 0.2rem solid $color_primary_dark;
+                border-bottom: 0.2rem solid $color_primary_dark;
+                transform: rotate(-45deg);
+                transition: transform 0.2s ease;
+            }
+
+            &:hover {
+                color: $color_primary_dark;
+            }
+        }
     }
 
     .talents__MainContainer {
@@ -414,6 +548,68 @@ h2 {
                     border-radius: 1rem;
                     background-color: $color_primary_dark;
                     color: $color_white;
+                    position: relative;
+                    cursor: help;
+                    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+
+                    &:hover,
+                    &:focus {
+                        transform: translateY(-0.2rem);
+                        background-color: $color_primary;
+                        box-shadow: 0 0.6rem 1.4rem rgba($color_primary_dark, 0.3);
+                        outline: none;
+                    }
+
+                    // Tooltip from data-tooltip, shown on hover/focus
+                    &::before,
+                    &::after {
+                        position: absolute;
+                        left: 50%;
+                        opacity: 0;
+                        visibility: hidden;
+                        pointer-events: none;
+                        transform: translate(-50%, 0.5rem);
+                        transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1), transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.3s;
+                        z-index: 10;
+                    }
+
+                    &::after {
+                        content: attr(data-tooltip);
+                        bottom: calc(100% + 0.8rem);
+                        width: 22rem;
+                        padding: 0.8rem 1.2rem;
+                        border-radius: 0.6rem;
+                        background-color: $color_black;
+                        color: $color_white;
+                        font-size: 1.3rem;
+                        line-height: 1.5;
+                        text-align: center;
+                        box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.15);
+                        // --tipShift is set by the script in index.html to keep it on screen
+                        transform: translate(calc(-50% + var(--tipShift, 0px)), 0.5rem);
+                    }
+
+                    &::before {
+                        content: '';
+                        bottom: calc(100% + 0.2rem);
+                        border: 0.6rem solid transparent;
+                        border-top-color: $color_black;
+                    }
+
+                    &:hover,
+                    &:focus {
+                        &::before,
+                        &::after {
+                            opacity: 1;
+                            visibility: visible;
+                            transform: translate(-50%, 0);
+                        }
+
+                        &::after {
+                            transform: translate(calc(-50% + var(--tipShift, 0px)), 0);
+                        }
+                    }
+
                     .skills__Text {
 
                     }
@@ -569,6 +765,8 @@ h2 {
     display: inline-block;
     position: relative;
     height: 93px;
+    // Clip only on the left so the subtitle's line stops at the title's edge
+    clip-path: inset(-100vh -100vw -100vh 0);
 
     .title__Title {
         color: $color_black;
@@ -576,7 +774,9 @@ h2 {
     }
 
     .title__Title--first {
+        // Line is now drawn by .title__Title--second::before
         &::after {
+            display: none;
             content: "";
             position: absolute;
             background-color: $color_black;
@@ -588,12 +788,23 @@ h2 {
     }
 
     .title__Title--second {
-        background-color: white;
+        background-color: transparent;
         font-size: 2rem;
         position: absolute;
         right: 0;
         padding-left: 1.5rem;
         color: $color_primary_dark;
+
+        // Line running from the subtitle back to the left edge of the title
+        &::before {
+            content: "";
+            position: absolute;
+            top: calc(50% - 1px);
+            right: 100%;
+            width: 100vw;
+            height: 2px;
+            background-color: $color_black;
+        }
     }
 
     
@@ -862,6 +1073,8 @@ h2 {
             max-width: 58.5rem;
             padding: 2rem 0;
             position: relative;
+            // Own stacking context so the card background sits above the page backdrop
+            z-index: 0;
             margin-bottom: 2rem;
 
             &:hover {
@@ -874,7 +1087,8 @@ h2 {
 
             &::after {
                 content: '';
-                background-color: #f5f5f5;
+                background-color: #FFF;
+                box-shadow: 0 0.4rem 1.6rem rgba($color_black, 0.06);
                 width: calc(100% - 14.5rem);
                 height: 100%;
                 position: absolute;
@@ -942,9 +1156,10 @@ h2 {
                     font-size: 1.8rem;
                     margin: 1rem 0;
                     font-weight: bold;
+                    color: #555;
                 }
                 .education__InfoText {
-
+                    color: #555;
                 }
             }
         }
@@ -1532,5 +1747,67 @@ h2 {
     100% {
         opacity: 1;
         transform: translate(0);
+    }
+}
+
+@keyframes my__BgDriftOne {
+    0% {
+        background-position: 0 -25vh;
+    }
+    100% {
+        background-position: 0 55vh;
+    }
+}
+
+@keyframes my__BgDriftTwo {
+    0% {
+        background-position: 0 55vh;
+    }
+    100% {
+        background-position: 0 -25vh;
+    }
+}
+// Shift exactly one line period (40px) along the 45deg gradient so the loop is seamless
+@keyframes my__BgLines {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(28.2843px, -28.2843px);
+    }
+}
+
+@property --profileGlowLight {
+    syntax: '<color>';
+    initial-value: transparent;
+    inherits: false;
+}
+
+@property --profileGlowDark {
+    syntax: '<color>';
+    initial-value: transparent;
+    inherits: false;
+}
+
+@property --profileBorderAngle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes my__ProfileBorder {
+    to {
+        --profileBorderAngle: 360deg;
+    }
+}
+
+
+// Shift one full pattern width (100vw) so the edge glow loops seamlessly
+@keyframes my__BgEdges {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100vw);
     }
 }
