@@ -1811,3 +1811,50 @@ h2 {
         transform: translateX(100vw);
     }
 }
+
+/*
+    Language switch (EN / ÍS)
+*/
+[v-cloak] {
+    display: none;
+}
+
+.langSwitch {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 100;
+    display: flex;
+    padding: 0.3rem;
+    border-radius: 10rem;
+    background-color: rgba($color_white, 0.92);
+    box-shadow: 0 0.4rem 1.6rem rgba($color_black, 0.12);
+
+    &__Btn {
+        font-family: "Lato", sans-serif;
+        font-size: 1.3rem;
+        font-weight: 700;
+        letter-spacing: 0.1rem;
+        color: $color_grey_dark;
+        background: transparent;
+        border: none;
+        border-radius: 10rem;
+        padding: 0.5rem 1.2rem;
+        cursor: pointer;
+        transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+
+        &:hover {
+            color: $color_primary_dark;
+        }
+
+        &:focus-visible {
+            outline: 0.2rem solid $color_primary_dark;
+            outline-offset: 0.1rem;
+        }
+
+        &.active {
+            color: $color_white;
+            background-color: $color_primary_dark;
+        }
+    }
+}

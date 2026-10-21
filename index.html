@@ -1,7 +1,7 @@
 <!--
 
     Banner mynd
-    Linkar 
+    Linkar
 
 -->
 
@@ -10,7 +10,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
 
         <link rel="stylesheet" href="css/icon-font.css">
@@ -18,27 +18,34 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="shortcut icon" type="image/png" href="img/favicon.png">
         <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-        
+
         <title>Snævar Dagur résumé</title>
     </head>
     <body>
+        <div id="app" v-cloak>
+        <!-- Language switch -->
+        <div class="langSwitch" role="group" :aria-label="$t('meta.switchLanguage')">
+            <button type="button" class="langSwitch__Btn" :class="{ active: locale === 'en' }" :aria-pressed="locale === 'en'" lang="en" @click="setLocale('en')">EN</button>
+            <button type="button" class="langSwitch__Btn" :class="{ active: locale === 'is' }" :aria-pressed="locale === 'is'" lang="is" @click="setLocale('is')">ÍS</button>
+        </div>
+
         <!-- Portfolio -->
         <main class="portfolio__mainContainer container" id="main">
             <section class="contactInformation__MainContainer">
                 <div class="profileImage-_MainContainer">
                     <div class="profileImage__Container">
-                        <img class="profileImage__Image" src="img/ProfileImg.jpg" alt="profilePicture">
+                        <img class="profileImage__Image" src="img/ProfileImg.jpg" :alt="$t('contact.profileAlt')">
                     </div>
                 </div>
                 <div class="contactInformation__ContactInfo">
                     <div class="ContactInfo__Item">
-                        <i class="ContactInfo__Item_Icon fas fa-globe"></i><span class="ContactInfo__Item__Text">Nationality </span><a href="https://www.google.com/maps/place/Iceland/@64.8473037,-21.4946894,7z/data=!3m1!4b1!4m5!3m4!1s0x48d22b52a3eb6043:0x6f8a0434e5c1459a!8m2!3d64.963051!4d-19.020835" class="ContactInfo__Item__Link">Iceland</a>
+                        <i class="ContactInfo__Item_Icon fas fa-globe"></i><span class="ContactInfo__Item__Text">{{ $t('contact.nationality') }} </span><a href="https://www.google.com/maps/place/Iceland/@64.8473037,-21.4946894,7z/data=!3m1!4b1!4m5!3m4!1s0x48d22b52a3eb6043:0x6f8a0434e5c1459a!8m2!3d64.963051!4d-19.020835" class="ContactInfo__Item__Link">{{ $t('contact.iceland') }}</a>
                     </div>
                     <div class="ContactInfo__Item">
-                        <i class="ContactInfo__Item_Icon fas fa-map-marker-alt"></i><span class="ContactInfo__Item__Text">Location </span><a href="https://www.google.com/maps/place/Reykjav%C3%ADk/@64.1334735,-21.9226526,12z/data=!3m1!4b1!4m5!3m4!1s0x48d674b9eedcedc3:0xec912ca230d26071!8m2!3d64.146582!4d-21.9426354" class="ContactInfo__Item__Link">Reykjavík</a>
+                        <i class="ContactInfo__Item_Icon fas fa-map-marker-alt"></i><span class="ContactInfo__Item__Text">{{ $t('contact.location') }} </span><a href="https://www.google.com/maps/place/Reykjav%C3%ADk/@64.1334735,-21.9226526,12z/data=!3m1!4b1!4m5!3m4!1s0x48d674b9eedcedc3:0xec912ca230d26071!8m2!3d64.146582!4d-21.9426354" class="ContactInfo__Item__Link">Reykjavík</a>
                     </div>
                     <div class="ContactInfo__Item">
-                        <i class="ContactInfo__Item_Icon fas fa-envelope"></i><span class="ContactInfo__Item__Text">Email </span><a href="mailto:snaevar13@gmail.com?Subject=Job%20offer" class="ContactInfo__Item__Link">snaevar13@gmail.com</a>
+                        <i class="ContactInfo__Item_Icon fas fa-envelope"></i><span class="ContactInfo__Item__Text">{{ $t('contact.email') }} </span><a href="mailto:snaevar13@gmail.com?Subject=Job%20offer" class="ContactInfo__Item__Link">snaevar13@gmail.com</a>
                     </div>
                     <!--
                     <div class="ContactInfo__Item">
@@ -53,68 +60,61 @@
                 </div>
             </section>
             <section class="aboutMe__MainContainer">
-                <h2 class="aboutMe__Title segmentTitle">About me</h3>
-                <p class="aboutMe__Text">
-                    Software Developer with a BSc in Computer Science and over 10 years of experience designing, developing, and maintaining software solutions across different industries, including e-commerce and cybersecurity. Responsibilities have included technical decision-making, coordinating development work, and ensuring successful project delivery. Comfortable working both independently and as part of a team, with strong problem-solving and communication skills. Driven by an interest in new technologies and continuously developing technical knowledge and skills.
-                </p>
+                <h2 class="aboutMe__Title segmentTitle">{{ $t('about.title') }}</h2>
+                <p class="aboutMe__Text">{{ $t('about.text') }}</p>
                 <details class="aboutMe__Details">
-                    <summary class="aboutMe__Summary">Family</summary>
-                    <p class="aboutMe__Text">
-                        I live with my partner, Sigrún Gunnarsdóttir, who works as an Account Manager at Landsnet. Together, we have two children, Lára (born in 2021) and Gunnar Óliver (born in 2026).
-                    </p>
+                    <summary class="aboutMe__Summary">{{ $t('about.familyTitle') }}</summary>
+                    <p class="aboutMe__Text">{{ $t('about.family') }}</p>
                 </details>
                 <details class="aboutMe__Details">
-                    <summary class="aboutMe__Summary">Interests &amp; Hobbies</summary>
-                    <p class="aboutMe__Text">
-                        I have a background in competitive swimming, having trained for 13 years and represented Iceland on the national team. I enjoy running, climbing, Brazilian jiu jitsu (bjj), and have recently started exploring golf. In my spare time, I also enjoy various forms of gaming.
-                    </p>
+                    <summary class="aboutMe__Summary">{{ $t('about.interestsTitle') }}</summary>
+                    <p class="aboutMe__Text">{{ $t('about.interests') }}</p>
                 </details>
             </section>
             <section class="talents__MainContainer">
                 <div class="skills__MainContainer">
-                    <h2 class="skills__Title segmentTitle">Skills</h3>
+                    <h2 class="skills__Title segmentTitle">{{ $t('skills.title') }}</h2>
                     <div class="skills__Container">
-                        <div class="skills__Item" tabindex="0" data-tooltip="Progressive JavaScript framework for building reactive, component-based user interfaces">
+                        <div class="skills__Item" tabindex="0" :data-tooltip="$t('skills.vue')">
                             <p class="skills__Text">VueJS</p>
                         </div>
-                        <div class="skills__Item" tabindex="0" data-tooltip="Vue meta-framework adding server-side rendering, file-based routing and static site generation">
+                        <div class="skills__Item" tabindex="0" :data-tooltip="$t('skills.nuxt')">
                             <p class="skills__Text">Nuxt</p>
                         </div>
-                        <div class="skills__Item" tabindex="0" data-tooltip="JavaScript library from Meta for building user interfaces out of reusable components">
+                        <div class="skills__Item" tabindex="0" :data-tooltip="$t('skills.react')">
                             <p class="skills__Text">ReactJS</p>
                         </div>
-                        <div class="skills__Item" tabindex="0" data-tooltip="Google's MVC framework for building dynamic single-page web applications">
+                        <div class="skills__Item" tabindex="0" :data-tooltip="$t('skills.angular')">
                             <p class="skills__Text">AngularJS</p>
                         </div>
-                        <div class="skills__Item" tabindex="0" data-tooltip="Typed superset of JavaScript that catches errors at compile time and scales to large codebases">
+                        <div class="skills__Item" tabindex="0" :data-tooltip="$t('skills.typescript')">
                             <p class="skills__Text">TypeScript</p>
                         </div>
-                        <div class="skills__Item" tabindex="0" data-tooltip="Microsoft's statically typed, object-oriented language for .NET back-end development">
+                        <div class="skills__Item" tabindex="0" :data-tooltip="$t('skills.csharp')">
                             <p class="skills__Text">C#</p>
                         </div>
-                        <div class="skills__Item" tabindex="0" data-tooltip="CSS preprocessor adding variables, nesting and mixins for maintainable stylesheets">
+                        <div class="skills__Item" tabindex="0" :data-tooltip="$t('skills.sass')">
                             <p class="skills__Text">Sass</p>
                         </div>
-                        <div class="skills__Item" tabindex="0" data-tooltip="CSS preprocessor with variables, mixins and functions, compiled to plain CSS">
+                        <div class="skills__Item" tabindex="0" :data-tooltip="$t('skills.less')">
                             <p class="skills__Text">Less</p>
                         </div>
-                        <div class="skills__Item" tabindex="0" data-tooltip="All-in-one .NET platform for CMS, e-commerce and PIM, used to build webstores">
+                        <div class="skills__Item" tabindex="0" :data-tooltip="$t('skills.dynamicweb')">
                             <p class="skills__Text">DynamicWeb</p>
                         </div>
-                        <div class="skills__Item" tabindex="0" data-tooltip="CRM system built by Advania, now rebranded as VEVA CMS">
+                        <div class="skills__Item" tabindex="0" :data-tooltip="$t('skills.lisa')">
                             <p class="skills__Text">LiSA</p>
                         </div>
-                        <div class="skills__Item" tabindex="0" data-tooltip="Microsoft SQL Server, a relational database management system">
+                        <div class="skills__Item" tabindex="0" :data-tooltip="$t('skills.mssql')">
                             <p class="skills__Text">MSSQL</p>
                         </div>
-                        
                     </div>
                 </div>
                 <div class="languages__MainContainer">
-                    <h2 class="languages__Title segmentTitle">Languages</h3>
-                    <div  class="languages__Container">
+                    <h2 class="languages__Title segmentTitle">{{ $t('languages.title') }}</h2>
+                    <div class="languages__Container">
                         <div class="languages__Item">
-                            <p class="languages__Text">Icelandic <span class="languages__Text--small">(native)</span></p>
+                            <p class="languages__Text">{{ $t('languages.icelandic') }} <span class="languages__Text--small">{{ $t('languages.native') }}</span></p>
                             <div class="languages__BoxContainer">
                                 <span class="languages__Box active"></span>
                                 <span class="languages__Box active"></span>
@@ -124,7 +124,7 @@
                             </div>
                         </div>
                         <div class="languages__Item">
-                            <p class="languages__Text">English <span class="languages__Text--small">(professional)</span></p>
+                            <p class="languages__Text">{{ $t('languages.english') }} <span class="languages__Text--small">{{ $t('languages.professional') }}</span></p>
                             <div class="languages__BoxContainer">
                                 <span class="languages__Box active"></span>
                                 <span class="languages__Box active"></span>
@@ -141,97 +141,97 @@
         <!-- Education -->
         <section class="education__Section">
             <div class="title__TitleContainer">
-                <h2 class="title__Title title__Title--first">Work Experience</h2>
-                <h3 class="title__Title title__Title--second">Timeline</h3>
+                <h2 class="title__Title title__Title--first">{{ $t('sections.workExperience') }}</h2>
+                <h3 class="title__Title title__Title--second">{{ $t('sections.timeline') }}</h3>
             </div>
 
             <div class="education__MainContainer">
                 <div class="education__Item">
                     <div class="education_TimeContainer">
                         <h2 class="education__TimeTitle">2024</h2>
-                        <p class="education__TimeDate">To <span class="education__TimeDate--current"> current</span></p>
+                        <p class="education__TimeDate">{{ $t('dates.currentPrefix') }} <span class="education__TimeDate--current"> {{ $t('dates.current') }}</span></p>
                     </div>
                     <div class="education__InfoContainer">
-                        <p class="education__InfoTitle">Software Developer</p>
+                        <p class="education__InfoTitle">{{ $t('jobs.softwareDeveloper') }}</p>
                         <p class="education__InfoCompany">Aftra</p>
-                        <p class="education__InfoText">Building Aftra's attack surface management platform, helping organizations discover and monitor their external exposure</p>
+                        <p class="education__InfoText">{{ $t('jobs.aftra') }}</p>
                     </div>
                 </div>
                 <div class="education__Item">
                     <div class="education_TimeContainer">
                         <h2 class="education__TimeTitle">2022</h2>
-                        <p class="education__TimeDate">To 2024</p>
+                        <p class="education__TimeDate">{{ $t('dates.to') }} 2024</p>
                     </div>
                     <div class="education__InfoContainer">
-                        <p class="education__InfoTitle">Software Developer</p>
+                        <p class="education__InfoTitle">{{ $t('jobs.softwareDeveloper') }}</p>
                         <p class="education__InfoCompany">Syndis</p>
-                        <p class="education__InfoText">Developing software at Syndis, an Icelandic offensive security company</p>
+                        <p class="education__InfoText">{{ $t('jobs.syndis') }}</p>
                     </div>
                 </div>
                 <div class="education__Item">
                     <div class="education_TimeContainer">
                         <h2 class="education__TimeTitle">2018</h2>
-                        <p class="education__TimeDate">To 2022</p>
+                        <p class="education__TimeDate">{{ $t('dates.to') }} 2022</p>
                     </div>
                     <div class="education__InfoContainer">
-                        <p class="education__InfoTitle">Senior Software Developer</p>
+                        <p class="education__InfoTitle">{{ $t('jobs.seniorSoftwareDeveloper') }}</p>
                         <p class="education__InfoCompany">Advania</p>
-                        <p class="education__InfoText">Moved to building webstores full-time with a newly formed team. Making webstores for major companies in Iceland</p>
+                        <p class="education__InfoText">{{ $t('jobs.advaniaSenior') }}</p>
                     </div>
                 </div>
                 <div class="education__Item">
                     <div class="education_TimeContainer">
                         <h2 class="education__TimeTitle">2016</h2>
-                        <p class="education__TimeDate">To 2018</p>
+                        <p class="education__TimeDate">{{ $t('dates.to') }} 2018</p>
                     </div>
                     <div class="education__InfoContainer">
-                        <p class="education__InfoTitle">Junior Software Developer</p>
+                        <p class="education__InfoTitle">{{ $t('jobs.juniorSoftwareDeveloper') }}</p>
                         <p class="education__InfoCompany">Advania</p>
-                        <p class="education__InfoText">Worked on creating new features & maintaining variety of websites using HTML, CSS, JavaScript, XSLT & C#</p>
+                        <p class="education__InfoText">{{ $t('jobs.advaniaJunior') }}</p>
                     </div>
                 </div>
                 <div class="education__Item">
                     <div class="education_TimeContainer">
                         <h2 class="education__TimeTitle">2015</h2>
-                        <p class="education__TimeDate">Dec</p>
+                        <p class="education__TimeDate">{{ $t('dates.dec') }}</p>
                     </div>
                     <div class="education__InfoContainer">
-                        <p class="education__InfoTitle">Teaching Assistance</p>
-                        <p class="education__InfoCompany">Reykjavik University</p>
-                        <p class="education__InfoText">Three week seminar for first year students, focusing on building a full fledged MVC application</p>
+                        <p class="education__InfoTitle">{{ $t('jobs.teachingAssistant') }}</p>
+                        <p class="education__InfoCompany">{{ $t('jobs.reykjavikUniversity') }}</p>
+                        <p class="education__InfoText">{{ $t('jobs.ruSeminar') }}</p>
                     </div>
                 </div>
                 <div class="education__Item">
                     <div class="education_TimeContainer">
                         <h2 class="education__TimeTitle">2015</h2>
-                        <p class="education__TimeDate">Jan To May</p>
+                        <p class="education__TimeDate">{{ $t('dates.janToMay') }}</p>
                     </div>
                     <div class="education__InfoContainer">
-                        <p class="education__InfoTitle">Teaching Assistance</p>
-                        <p class="education__InfoCompany">Reykjavik University</p>
-                        <p class="education__InfoText">Graded projects for Web development II, an advanced web development course focused on front-end development</p>
+                        <p class="education__InfoTitle">{{ $t('jobs.teachingAssistant') }}</p>
+                        <p class="education__InfoCompany">{{ $t('jobs.reykjavikUniversity') }}</p>
+                        <p class="education__InfoText">{{ $t('jobs.ruWebDev') }}</p>
                     </div>
                 </div>
                 <div class="education__Item">
                     <div class="education_TimeContainer">
                         <h2 class="education__TimeTitle">2012</h2>
-                        <p class="education__TimeDate">To 2016</p>
+                        <p class="education__TimeDate">{{ $t('dates.to') }} 2016</p>
                     </div>
                     <div class="education__InfoContainer">
-                        <p class="education__InfoTitle">Pavement Worker</p>
+                        <p class="education__InfoTitle">{{ $t('jobs.pavementWorker') }}</p>
                         <p class="education__InfoCompany">Hlaðbær Colas</p>
-                        <p class="education__InfoText">Summer job in pavement, putting up roadblocks and paving roads</p>
+                        <p class="education__InfoText">{{ $t('jobs.colas') }}</p>
                     </div>
                 </div>
                 <div class="education__Item">
                     <div class="education_TimeContainer">
                         <h2 class="education__TimeTitle">2010</h2>
-                        <p class="education__TimeDate">To 2016</p>
+                        <p class="education__TimeDate">{{ $t('dates.to') }} 2016</p>
                     </div>
                     <div class="education__InfoContainer">
-                        <p class="education__InfoTitle">Assistance Guide</p>
+                        <p class="education__InfoTitle">{{ $t('jobs.assistantGuide') }}</p>
                         <p class="education__InfoCompany">Ultima Thule</p>
-                        <p class="education__InfoText">Part time job as an assistance tour guide. Everything from long tent trips to daily cavern trips</p>
+                        <p class="education__InfoText">{{ $t('jobs.ultimaThule') }}</p>
                     </div>
                 </div>
             </div>
@@ -240,70 +240,72 @@
         <!-- Projects -->
         <section class="interests__Section">
             <div class="title__TitleContainer">
-                <h2 class="title__Title title__Title--first">Work Experience</h2>
-                <h3 class="title__Title title__Title--second">Notable Projects</h3>
+                <h2 class="title__Title title__Title--first">{{ $t('sections.workExperience') }}</h2>
+                <h3 class="title__Title title__Title--second">{{ $t('sections.notableProjects') }}</h3>
             </div>
             <div class="interests__MainContainer">
-            <figure class="interests__Item">
+                <figure class="interests__Item">
                     <div class="interests__Item__Img" style="background-image: url('img/aftra.png')"></div>
                     <figcaption class="interests__Item__Content">
                         <h2 class="interests__Item__Title"><a class="interests__Item__Link" href="https://aftra.io/">Aftra</a></h2>
                         <div class="interests__Item__Icon"><i class="fas fa-shield-alt"></i></div>
                         <ul class="interests__Item__List">
-                            <li class="interests__Item__ListItem">Attack surface management platform</li>
-                            <li class="interests__Item__ListItem">Continuous discovery & monitoring of external exposure</li>
+                            <li class="interests__Item__ListItem">{{ $t('projects.aftra1') }}</li>
+                            <li class="interests__Item__ListItem">{{ $t('projects.aftra2') }}</li>
                         </ul>
                     </figcaption>
                 </figure>
-            <figure class="interests__Item">
+                <figure class="interests__Item">
                     <div class="interests__Item__Img" style="background-image: url('img/s4s.png')"></div>
                     <figcaption class="interests__Item__Content">
                         <h2 class="interests__Item__Title"><a class="interests__Item__Link" href="https://s4s.is/">S4S</a></h2>
                         <div class="interests__Item__Icon"><i class="fas fa-shoe-prints"></i></div>
                         <ul class="interests__Item__List">
-                            <li class="interests__Item__ListItem">Worked on the S4S webstore</li>
-                            <li class="interests__Item__ListItem">Multiple brand stores sharing a single cart</li>
+                            <li class="interests__Item__ListItem">{{ $t('projects.s4s1') }}</li>
+                            <li class="interests__Item__ListItem">{{ $t('projects.s4s2') }}</li>
                         </ul>
                     </figcaption>
                 </figure>
-            <figure class="interests__Item">
+                <figure class="interests__Item">
                     <div class="interests__Item__Img" style="background-image: url('img/olgerdin.png')"></div>
                     <figcaption class="interests__Item__Content">
                         <h2 class="interests__Item__Title twoLines"><a class="interests__Item__Link" href="https://vefverslun.olgerdin.is/">Ölgerðin & Danól</a></h2>
                         <div class="interests__Item__Icon"><i class="fas fa-beer"></i></div>
                         <ul class="interests__Item__List">
-                            <li class="interests__Item__ListItem">Worked on both the Ölgerðin and Danól webstores</li>
+                            <li class="interests__Item__ListItem">{{ $t('projects.olgerdin1') }}</li>
                         </ul>
-                    </figcaption>			
+                    </figcaption>
                 </figure>
                 <figure class="interests__Item">
-                        <div class="interests__Item__Img" style="background-image: url('img/Advania.jpg')"></div>
-                        <figcaption class="interests__Item__Content">
-                            <h2 class="interests__Item__Title twoLines"><a class="interests__Item__Link" href="https://vefverslun.advania.is/">Advania Vefverslun</a></h2>
-                            <div class="interests__Item__Icon"><i class="fas fa-laptop"></i></div>
-                            <ul class="interests__Item__List">
-                                <li class="interests__Item__ListItem">Worked on the Advania webstore</li>
-                                <li class="interests__Item__ListItem">First Icelandic webstore in DynamicWeb</li>
-                        </figcaption>			
-                    </figure>
+                    <div class="interests__Item__Img" style="background-image: url('img/Advania.jpg')"></div>
+                    <figcaption class="interests__Item__Content">
+                        <h2 class="interests__Item__Title twoLines"><a class="interests__Item__Link" href="https://vefverslun.advania.is/">Advania Vefverslun</a></h2>
+                        <div class="interests__Item__Icon"><i class="fas fa-laptop"></i></div>
+                        <ul class="interests__Item__List">
+                            <li class="interests__Item__ListItem">{{ $t('projects.advania1') }}</li>
+                            <li class="interests__Item__ListItem">{{ $t('projects.advania2') }}</li>
+                        </ul>
+                    </figcaption>
+                </figure>
                 <figure class="interests__Item">
                     <div class="interests__Item__Img" style="background-image: url('img/TIMBUR.jpg')"></div>
                     <figcaption class="interests__Item__Content">
                         <h2 class="interests__Item__Title"><a class="interests__Item__Link" href="https://byko.is/">Byko</a></h2>
                         <div class="interests__Item__Icon"><i class="fas fa-hammer"></i></div>
                         <ul class="interests__Item__List">
-                            <li class="interests__Item__ListItem">Worked on the previous Byko webstore</li>
-                            <li class="interests__Item__ListItem">Iceland's leading hardware retail and building material supplier</li>
-                    </figcaption>			
-                </figure>                
-            <figure class="interests__Item">
+                            <li class="interests__Item__ListItem">{{ $t('projects.byko1') }}</li>
+                            <li class="interests__Item__ListItem">{{ $t('projects.byko2') }}</li>
+                        </ul>
+                    </figcaption>
+                </figure>
+                <figure class="interests__Item">
                     <div class="interests__Item__Img" style="background-image: url('img/arionbanki.png')"></div>
                     <figcaption class="interests__Item__Content">
                         <h2 class="interests__Item__Title"><a class="interests__Item__Link" href="https://www.arionbanki.is/einstaklingar/lan/greidslumat/">Arion banki</a></h2>
                         <div class="interests__Item__Icon"><i class="fas fa-university"></i></div>
                         <ul class="interests__Item__List">
-                            <li class="interests__Item__ListItem">Worked on the online credit assessment for loans</li>
-                            <li class="interests__Item__ListItem">Iceland's first online credit assessment</li>
+                            <li class="interests__Item__ListItem">{{ $t('projects.arion1') }}</li>
+                            <li class="interests__Item__ListItem">{{ $t('projects.arion2') }}</li>
                         </ul>
                     </figcaption>
                 </figure>
@@ -312,102 +314,53 @@
         <!-- Work Experience -->
         <section class="timeline__Section">
             <div class="title__TitleContainer">
-                <h2 class="title__Title title__Title--first">Education</h2>
-                <h3 class="title__Title title__Title--second">Overview</h3>
+                <h2 class="title__Title title__Title--first">{{ $t('sections.education') }}</h2>
+                <h3 class="title__Title title__Title--second">{{ $t('sections.overview') }}</h3>
             </div>
             <div class="timeline__MainContainer">
                 <div class="timeline__ItemContainer left">
-                  <div class="timeline__Item">
-                    <div class="timeline__textContainer">
-                        <p class="timeline__textTitle">Reykjavík University</p>
-                        <p class="timeline__text">BSc Computer Science with a grade of 8.1/10</p>
+                    <div class="timeline__Item">
+                        <div class="timeline__textContainer">
+                            <p class="timeline__textTitle">{{ $t('education.reykjavikUniversity') }}</p>
+                            <p class="timeline__text">{{ $t('education.ruText') }}</p>
+                        </div>
+                        <h2 class="timeline__ItemTitle">2013 <span class="timeline__ItemTitle__ToDate">{{ $t('dates.to') }} 2016</span></h2>
                     </div>
-                    <h2 class="timeline__ItemTitle">2013 <span class="timeline__ItemTitle__ToDate">To 2016</span></h2>
-                </div>
                 </div>
                 <div class="timeline__ItemContainer right">
-                  <div class="timeline__Item">
-                    <h2 class="timeline__ItemTitle">2012 <span class="timeline__ItemTitle__ToDate">To 2013</span></h2>
-                    <div class="timeline__textContainer">
-                        <p class="timeline__textTitle">University of Iceland</p>
-                        <p class="timeline__text">Started in pharmaceuticals science moved on to Biology before finally settling in Computer Science</p>
+                    <div class="timeline__Item">
+                        <h2 class="timeline__ItemTitle">2012 <span class="timeline__ItemTitle__ToDate">{{ $t('dates.to') }} 2013</span></h2>
+                        <div class="timeline__textContainer">
+                            <p class="timeline__textTitle">{{ $t('education.universityOfIceland') }}</p>
+                            <p class="timeline__text">{{ $t('education.uiText') }}</p>
+                        </div>
                     </div>
-                  </div>
                 </div>
                 <div class="timeline__ItemContainer left">
-                  <div class="timeline__Item">
-                    <div class="timeline__textContainer">
-                        <p class="timeline__textTitle">Flensborg</p>
-                        <p class="timeline__text">High School/Junior College with focus on Biology</p>
+                    <div class="timeline__Item">
+                        <div class="timeline__textContainer">
+                            <p class="timeline__textTitle">{{ $t('education.flensborg') }}</p>
+                            <p class="timeline__text">{{ $t('education.flensborgText') }}</p>
+                        </div>
+                        <h2 class="timeline__ItemTitle">2008 <span class="timeline__ItemTitle__ToDate">{{ $t('dates.to') }} 2012</span></h2>
                     </div>
-                    <h2 class="timeline__ItemTitle">2008 <span class="timeline__ItemTitle__ToDate">To 2012</span></h2>
                 </div>
+            </div>
         </section>
 
         <!-- Recommendations / Goals / Awards & Honors / Other education  -->
         <section class="recommendations__Section">
             <div class="title__TitleContainer">
-                <h2 class="title__Title title__Title--first">Recommendations</h2>
-                <h3 class="title__Title title__Title--second">References</h3>
+                <h2 class="title__Title title__Title--first">{{ $t('sections.recommendations') }}</h2>
+                <h3 class="title__Title title__Title--second">{{ $t('sections.references') }}</h3>
             </div>
-            <h3 class="recommendations__Text">Available upon request</p>
+            <h3 class="recommendations__Text">{{ $t('sections.availableOnRequest') }}</h3>
         </section>
+        </div>
 
-        <script>
-            // Nudge skill tooltips sideways so they never run off the screen
-            document.querySelectorAll('.skills__Item').forEach(function (item) {
-                function fit() {
-                    var rect = item.getBoundingClientRect();
-                    var half = parseFloat(getComputedStyle(item, '::after').width) / 2;
-                    var center = rect.left + rect.width / 2;
-                    var gap = 8;
-                    var shift = Math.min(0, window.innerWidth - gap - (center + half)) + Math.max(0, gap - (center - half));
-                    item.style.setProperty('--tipShift', shift + 'px');
-                }
-                item.addEventListener('mouseenter', fit);
-                item.addEventListener('focus', fit);
-            });
-
-            // Smoothly expand/collapse the About me subsections
-            var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-            document.querySelectorAll('.aboutMe__Details').forEach(function (details) {
-                var content = details.querySelector('.aboutMe__Text');
-                var heightAnim = null;
-                var fadeAnim = null;
-                var closing = false;
-
-                details.querySelector('summary').addEventListener('click', function (e) {
-                    if (reduceMotion.matches) return;
-                    e.preventDefault();
-
-                    var start = details.offsetHeight;
-                    var opening = !details.open || closing;
-                    if (heightAnim) heightAnim.cancel();
-                    if (fadeAnim) fadeAnim.cancel();
-
-                    details.open = false;
-                    var closedHeight = details.offsetHeight;
-                    details.open = true;
-                    var openHeight = details.offsetHeight;
-
-                    closing = !opening;
-                    details.style.overflow = 'hidden';
-                    var timing = { duration: 400, easing: 'cubic-bezier(0.4, 0, 0.2, 1)' };
-                    heightAnim = details.animate({ height: [start + 'px', (opening ? openHeight : closedHeight) + 'px'] }, timing);
-                    fadeAnim = content.animate({
-                        opacity: opening ? [0, 1] : [1, 0],
-                        transform: opening ? ['translateY(-0.6rem)', 'none'] : ['none', 'translateY(-0.6rem)']
-                    }, Object.assign({ fill: 'both' }, timing));
-
-                    heightAnim.onfinish = function () {
-                        details.open = opening;
-                        details.style.overflow = '';
-                        closing = false;
-                        heightAnim = null;
-                        fadeAnim.cancel();
-                        fadeAnim = null;
-                    };
-                });
-            });
-        </script>    </body>
+        <script src="https://cdn.jsdelivr.net/npm/vue@3.4.38/dist/vue.global.prod.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue-i18n@9.14.0/dist/vue-i18n.global.prod.js"></script>
+        <script src="js/i18n.js"></script>
+        <script src="js/main.js"></script>
+    </body>
 </html>
