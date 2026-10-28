@@ -69,7 +69,7 @@
             </section>
             <section class="aboutMe__MainContainer" id="about">
                 <h2 class="aboutMe__Title segmentTitle">{{ $t('about.title') }}</h2>
-                <p class="aboutMe__Text">{{ $t('about.text') }}</p>
+                <p class="aboutMe__Text" v-for="(para, i) in $t('about.text').split('\n\n')" :key="i">{{ para }}</p>
                 <details class="aboutMe__Details">
                     <summary class="aboutMe__Summary">{{ $t('about.familyTitle') }}</summary>
                     <p class="aboutMe__Text">{{ $t('about.family') }}</p>
@@ -165,7 +165,7 @@
                     <div class="education__InfoContainer">
                         <p class="education__InfoTitle">{{ $t('jobs.softwareDeveloper') }}</p>
                         <p class="education__InfoCompany">Aftra</p>
-                        <p class="education__InfoText">{{ $t('jobs.aftra') }}</p>
+                        <ul class="education__InfoList"><li>{{ $t('jobs.aftra1') }}</li><li>{{ $t('jobs.aftra2') }}</li><li>{{ $t('jobs.aftra3') }}</li></ul>
                     </div>
                 </div>
                 <div class="education__Item">
@@ -176,7 +176,7 @@
                     <div class="education__InfoContainer">
                         <p class="education__InfoTitle">{{ $t('jobs.softwareDeveloper') }}</p>
                         <p class="education__InfoCompany">Syndis</p>
-                        <p class="education__InfoText">{{ $t('jobs.syndis') }}</p>
+                        <ul class="education__InfoList"><li>{{ $t('jobs.syndis1') }}</li><li>{{ $t('jobs.syndis2') }}</li></ul>
                     </div>
                 </div>
                 <div class="education__Item">
@@ -187,7 +187,7 @@
                     <div class="education__InfoContainer">
                         <p class="education__InfoTitle">{{ $t('jobs.seniorSoftwareDeveloper') }}</p>
                         <p class="education__InfoCompany">Advania</p>
-                        <p class="education__InfoText">{{ $t('jobs.advaniaSenior') }}</p>
+                        <ul class="education__InfoList"><li>{{ $t('jobs.advaniaSenior1') }}</li><li>{{ $t('jobs.advaniaSenior2') }}</li><li>{{ $t('jobs.advaniaSenior3') }}</li><li>{{ $t('jobs.advaniaSenior4') }}</li></ul>
                     </div>
                 </div>
                 <div class="education__Item">
@@ -283,7 +283,7 @@
                         <h2 class="interests__Item__Title twoLines"><a class="interests__Item__Link" href="https://vefverslun.olgerdin.is/">Ölgerðin & Danól</a></h2>
                         <div class="interests__Item__Icon"><i class="fas fa-beer"></i></div>
                         <ul class="interests__Item__List">
-                            <li class="interests__Item__ListItem">{{ $t('projects.olgerdin1') }}</li>
+                            <li class="interests__Item__ListItem">{{ $t('projects.olgerdin1') }}</li><li class="interests__Item__ListItem">{{ $t('projects.olgerdin2') }}</li>
                         </ul>
                     </figcaption>
                 </figure>
@@ -301,7 +301,7 @@
                 <figure class="interests__Item">
                     <div class="interests__Item__Img" style="background-image: url('img/TIMBUR.jpg')"></div>
                     <figcaption class="interests__Item__Content">
-                        <h2 class="interests__Item__Title"><a class="interests__Item__Link" href="https://byko.is/">Byko</a></h2>
+                        <h2 class="interests__Item__Title"><a class="interests__Item__Link" href="https://byko.is/">BYKO</a></h2>
                         <div class="interests__Item__Icon"><i class="fas fa-hammer"></i></div>
                         <ul class="interests__Item__List">
                             <li class="interests__Item__ListItem">{{ $t('projects.byko1') }}</li>

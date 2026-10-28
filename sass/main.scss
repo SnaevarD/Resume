@@ -2004,3 +2004,21 @@ h2 {
         scroll-margin-top: 11rem;
     }
 }
+
+/*
+    Bullet lists in work experience entries
+*/
+.education__InfoList {
+    margin: 0.4rem 0 0 1.8rem;
+    font-size: 1.6rem;
+    color: #555;
+
+    li {
+        margin-bottom: 0.4rem;
+    }
+}
+
+// Spacing between the About me paragraphs
+.aboutMe__MainContainer > .aboutMe__Text + .aboutMe__Text {
+    margin-top: 1rem;
+}
