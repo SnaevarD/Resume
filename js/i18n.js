@@ -10,7 +10,7 @@ var messages = {
         contact: {
             profileAlt: 'Profile picture',
             nationality: 'Nationality',
-            iceland: 'Iceland',
+            iceland: 'Icelandic',
             location: 'Location',
             email: 'Email'
         },
@@ -65,7 +65,7 @@ var messages = {
             softwareDeveloper: 'Software Developer',
             seniorSoftwareDeveloper: 'Senior Software Developer',
             juniorSoftwareDeveloper: 'Junior Software Developer',
-            teachingAssistant: 'Teaching assistant',
+            teachingAssistant: 'Teaching Assistant',
             pavementWorker: 'Pavement Worker',
             assistantGuide: 'Assistant Tour Guide',
             reykjavikUniversity: 'Reykjavik University',
@@ -117,7 +117,7 @@ var messages = {
         contact: {
             profileAlt: 'Prófílmynd',
             nationality: 'Þjóðerni',
-            iceland: 'Ísland',
+            iceland: 'Íslenskt',
             location: 'Staðsetning',
             email: 'Netfang'
         },
