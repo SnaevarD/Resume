@@ -123,7 +123,7 @@ var messages = {
         },
         about: {
             title: 'Um mig',
-            text: 'Ég er hugbúnaðarsérfræðingur með BSc í tölvunarfræði og yfir 10 ára reynslu af hönnun, þróun og viðhaldi hugbúnaðarlausna, einkum á sviði netverslunar og netöryggis.\n\nÁ starfsferli mínum hef ég komið að tæknilegum ákvörðunum, samhæft þróunarvinnu og axlað ábyrgð á að fylgja verkefnum eftir til enda. Ég vinn vel bæði sjálfstætt og í teymi og legg áherslu á skýr samskipti, gott samstarf og lausnamiðaða nálgun.\n\nÉg hef mikinn áhuga á tækni og leita stöðugt tækifæra til að efla þekkingu mína og færni.',
+            text: 'Ég er hugbúnaðarsérfræðingur með BSc-gráðu í tölvunarfræði og yfir tíu ára reynslu af hönnun, þróun og viðhaldi hugbúnaðarlausna, meðal annars á sviði vefverslana og netöryggis.\n\nÁ starfsferli mínum hef ég tekið þátt í tæknilegri ákvarðanatöku, samhæft þróunarvinnu og borið ábyrgð á framvindu verkefna. Ég á auðvelt með að vinna bæði sjálfstætt og í teymi og legg áherslu á góð samskipti, samstarf og lausnamiðaða nálgun.\n\nÉg hef mikinn áhuga á tækni og legg mig fram um að þróa stöðugt þekkingu mína og færni.',
             familyTitle: 'Fjölskylda',
             family: 'Ég bý með sambýliskonu minni, Sigrúnu Gunnarsdóttur, sem starfar sem viðskiptastjóri hjá Landsneti. Saman eigum við tvö börn, Láru (fædd 2021) og Gunnar Óliver (fæddur 2026).',
             interestsTitle: 'Áhugamál',
@@ -166,7 +166,7 @@ var messages = {
             currentPrefix: '',
             current: 'Núverandi',
             dec: 'Des',
-            janToMay: 'Jan til maí'
+            janToMay: 'jan.–maí'
         },
         jobs: {
             softwareDeveloper: 'Hugbúnaðarsérfræðingur',
@@ -177,19 +177,19 @@ var messages = {
             assistantGuide: 'Aðstoðarleiðsögumaður',
             reykjavikUniversity: 'Háskólinn í Reykjavík',
             aftra1: 'Hluti af þróunarteyminu sem smíðar lausn Aftra til vöktunar á árásarfleti, sem hjálpar fyrirtækjum að greina og vakta ytri veikleika sína.',
-            aftra2: 'Kom að framendaarkitektúr og þróun kjarnaíhluta.',
-            aftra3: 'Leiddi samþættingu öryggisvitundarþjálfunar AwareGO inn í lausn Aftra; yfir 4.000 notendur luku þjálfun á fyrsta mánuðinum.',
+            aftra2: 'Við þróun lausnar Aftra hef ég komið að hönnun og uppbyggingu framendans, ásamt þróun lykilþátta hans.',
+            aftra3: 'Leiddi innleiðingu á öryggisfræðslu AwareGO í lausn Aftra; yfir 4.000 notendur luku þjálfun á fyrsta mánuðinum.',
             syndis1: 'Vann að fyrstu þróun á lausn Aftra til vöktunar á árásarfleti, sem hófst upphaflega sem verkefni innan Syndis.',
             syndis2: 'Öðlaðist reynslu af netöryggi samhliða þróun á því sem síðar varð að sjálfstæðu sprotafyrirtæki.',
-            advaniaSenior1: 'Þróaði og viðhélt netverslunarlausnum fyrir stór íslensk fyrirtæki.',
+            advaniaSenior1: 'Vann að þróun og viðhaldi vefverslana fyrir stór og meðalstór íslensk fyrirtæki.',
             advaniaSenior2: 'Vann náið með viðskiptavinum við að greina viðskiptaþarfir og þróa sérsniðnar tæknilausnir.',
             advaniaSenior3: 'Vann með verkefnastjórum að samhæfingu þróunarvinnu, þar á meðal skipulagningu verkefna og forgangsröðun.',
-            advaniaSenior4: 'Lék lykilhlutverk í flóknum samþættingum og sérsniðinni virkni, þar á meðal í að sameina aðskildar netverslanir S4S í eina sameiginlega innkaupakörfu svo viðskiptavinir gátu skoðað og verslað þvert á vörumerki í einni greiðslu.',
+            advaniaSenior4: 'Átti stóran þátt í flóknum samtengingum og þróun sérsniðinna lausna, meðal annars við þróun sameiginlegrar innkaupakörfu fyrir S4S sem tengdi saman þrjár aðskildar vefverslanir. Það gerði viðskiptavinum kleift að skoða og versla þvert á vörumerki í einni greiðslu.',
             advaniaJunior: 'Þróaði nýja virkni og sá um viðhald á fjölbreyttum vefjum með HTML, CSS, JavaScript, XSLT og C#.',
             ruSeminar: 'Þriggja vikna námskeið fyrir fyrsta árs nema með áherslu á smíði heildstæðs MVC-forrits.',
-            ruWebDev: 'Yfirferð verkefna í Vefforritun II, framhaldsnámskeiði í vefþróun með áherslu á framenda.',
-            colas: 'Sumarstarf við malbikun, uppsetningu vegatálma og lagningu vega.',
-            ultimaThule: 'Hlutastarf sem aðstoðarleiðsögumaður. Allt frá löngum tjaldferðum til daglegra hellaferða.'
+            ruWebDev: 'Ég sá um yfirferð verkefna í Vefforritun II, framhaldsnámskeiði í vefþróun með áherslu á framenda.',
+            colas: 'Á sumrin starfaði ég við malbikun, uppsetningu vegatálma og lagningu vega.',
+            ultimaThule: 'Sem aðstoðarleiðsögumaður tók ég þátt í fjölbreyttum ferðum, meðal annars lengri tjaldferðum og hellaferðum.'
         },
         projects: {
             aftra1: 'Framendaarkitektúr og þróun lausnarinnar',
@@ -197,21 +197,21 @@ var messages = {
             s4s1: 'Lykilhlutverk í sameiginlegri körfu sem tengir þrjár vefverslanir',
             s4s2: 'Viðskiptavinir versla þvert á vörumerki í einni greiðslu',
             olgerdin1: 'B2B-vefverslanir fyrir Ölgerðina og Danól í DynamicWeb',
-            olgerdin2: 'Fyrirtækjaviðskiptavinir panta á netinu',
+            olgerdin2: 'Pantanir á netinu á samningsbundnum kjörum',
             advania1: 'Upprunaleg DynamicWeb-útgáfa vefverslunarinnar, færð úr LiSA',
             advania2: 'Fyrsta íslenska vefverslunin byggð á DynamicWeb',
             byko1: 'Tók þátt í þróun vefverslunar BYKO með teymi Advania',
-            byko2: 'Studdi við sókn fyrirtækisins í netsölu',
+            byko2: 'Öflug leitarvél og réttar lagerupplýsingar',
             arion1: 'Fyrsta rafræna greiðslumatið á Íslandi',
-            arion2: 'Viðskiptavinir ljúka ferlinu á netinu á nokkrum mínútum'
+            arion2: 'Greiðslumat á netinu á örfáum mínútum'
         },
         education: {
             reykjavikUniversity: 'Háskólinn í Reykjavík',
-            ruText: 'BSc í tölvunarfræði með einkunnina 8,1/10',
+            ruText: 'BSc-gráða í tölvunarfræði. Lokaeinkunn 8,1',
             universityOfIceland: 'Háskóli Íslands',
             uiText: 'Lauk námskeiðum í lyfjafræði og líffræði áður en ég hóf nám í tölvunarfræði.',
             flensborg: 'Flensborgarskólinn',
-            flensborgText: 'Framhaldsskóli með áherslu á líffræði'
+            flensborgText: 'Framhaldsskóli með áherslu á líffræði.'
         }
     }
 };
