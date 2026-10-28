@@ -1246,3 +1246,108 @@ h2 {
     .langSwitch__Btn.active {
       color: #FFF;
       background-color: #28b485; }
+
+/*
+    PDF download button (sits left of the language switch)
+*/
+.topActions {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem; }
+  .topActions .langSwitch {
+    position: static; }
+
+.pdfBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: "Lato", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  color: #28b485;
+  text-decoration: none;
+  padding: 0.8rem 1.4rem;
+  border-radius: 10rem;
+  background-color: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 0.4rem 1.6rem rgba(58, 58, 58, 0.12);
+  transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1), transform 0.3s cubic-bezier(0.22, 1, 0.36, 1); }
+  .pdfBtn:hover {
+    color: #FFF;
+    background-color: #28b485;
+    transform: translateY(-0.1rem); }
+  .pdfBtn:focus-visible {
+    outline: 0.2rem solid #28b485;
+    outline-offset: 0.1rem; }
+
+/*
+    Top bar with section navigation
+*/
+.topBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background-color: rgba(253, 253, 253, 0.85);
+  -webkit-backdrop-filter: blur(0.8rem);
+  backdrop-filter: blur(0.8rem);
+  box-shadow: 0 0.2rem 1.2rem rgba(58, 58, 58, 0.06); }
+  .topBar .topActions {
+    position: static; }
+  .topBar .pdfBtn, .topBar .langSwitch {
+    box-shadow: 0 0 0 0.1rem rgba(58, 58, 58, 0.08); }
+
+.topNav {
+  display: flex;
+  gap: 0.4rem;
+  overflow-x: auto;
+  scrollbar-width: none; }
+  .topNav::-webkit-scrollbar {
+    display: none; }
+  .topNav__Link {
+    font-family: "Lato", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: #777;
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 10rem;
+    transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1); }
+    .topNav__Link:hover {
+      color: #28b485; }
+    .topNav__Link:focus-visible {
+      outline: 0.2rem solid #28b485;
+      outline-offset: 0.1rem; }
+    .topNav__Link.active {
+      color: #28b485;
+      background-color: rgba(40, 180, 133, 0.1); }
+
+#about, #experience, #projects, #education {
+  scroll-margin-top: 8rem; }
+
+@media (max-width: 700px) {
+  .topBar {
+    flex-wrap: wrap;
+    padding: 0.8rem 1rem; }
+  .topNav {
+    order: 2;
+    width: 100%; }
+  .topActions {
+    margin-left: auto; }
+  body {
+    padding-top: 11rem; }
+  #about, #experience, #projects, #education {
+    scroll-margin-top: 11rem; } }

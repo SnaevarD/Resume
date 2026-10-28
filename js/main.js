@@ -33,10 +33,36 @@
                 locale.value = value;
             }
 
+            var navItems = [
+                { id: 'about', label: 'about.title' },
+                { id: 'experience', label: 'sections.workExperience' },
+                { id: 'projects', label: 'sections.notableProjects' },
+                { id: 'education', label: 'sections.education' }
+            ];
+            var activeSection = Vue.ref('about');
+
+            // Highlight the nav link for the section currently in view
+            function trackActiveSection() {
+                var sections = navItems.map(function (item) { return document.getElementById(item.id); });
+                function update() {
+                    var offset = window.innerHeight * 0.3;
+                    var current = navItems[0].id;
+                    sections.forEach(function (section, i) {
+                        if (section && section.getBoundingClientRect().top <= offset) current = navItems[i].id;
+                    });
+                    activeSection.value = current;
+                }
+                window.addEventListener('scroll', update, { passive: true });
+                window.addEventListener('resize', update);
+                // Wait a frame so v-cloak is gone and the layout is real before measuring
+                requestAnimationFrame(update);
+            }
+
             Vue.watch(locale, applyLocale, { immediate: true });
             Vue.onMounted(initInteractions);
+            Vue.onMounted(trackActiveSection);
 
-            return { locale: locale, setLocale: setLocale };
+            return { locale: locale, setLocale: setLocale, navItems: navItems, activeSection: activeSection };
         }
     });
 

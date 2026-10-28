@@ -1858,3 +1858,149 @@ h2 {
         }
     }
 }
+
+/*
+    PDF download button (sits left of the language switch)
+*/
+.topActions {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+
+    .langSwitch {
+        position: static;
+    }
+}
+
+.pdfBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: "Lato", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    color: $color_primary_dark;
+    text-decoration: none;
+    padding: 0.8rem 1.4rem;
+    border-radius: 10rem;
+    background-color: rgba($color_white, 0.92);
+    box-shadow: 0 0.4rem 1.6rem rgba($color_black, 0.12);
+    transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1), transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+
+    &:hover {
+        color: $color_white;
+        background-color: $color_primary_dark;
+        transform: translateY(-0.1rem);
+    }
+
+    &:focus-visible {
+        outline: 0.2rem solid $color_primary_dark;
+        outline-offset: 0.1rem;
+    }
+}
+
+/*
+    Top bar with section navigation
+*/
+.topBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background-color: rgba(darken($color_white, 0.6%), 0.85);
+    -webkit-backdrop-filter: blur(0.8rem);
+    backdrop-filter: blur(0.8rem);
+    box-shadow: 0 0.2rem 1.2rem rgba($color_black, 0.06);
+
+    .topActions {
+        position: static;
+    }
+
+    .pdfBtn,
+    .langSwitch {
+        box-shadow: 0 0 0 0.1rem rgba($color_black, 0.08);
+    }
+
+    @media (max-width: 700px) {
+        flex-wrap: wrap;
+        padding: 0.8rem 1rem;
+
+        .topActions {
+            margin-left: auto;
+        }
+    }
+}
+
+.topNav {
+    display: flex;
+    gap: 0.4rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    @media (max-width: 700px) {
+        order: 2;
+        width: 100%;
+    }
+
+    &__Link {
+        font-family: "Lato", sans-serif;
+        font-size: 1.3rem;
+        font-weight: 700;
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+        white-space: nowrap;
+        color: $color_grey_dark;
+        text-decoration: none;
+        padding: 0.6rem 1.2rem;
+        border-radius: 10rem;
+        transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+
+        &:hover {
+            color: $color_primary_dark;
+        }
+
+        &:focus-visible {
+            outline: 0.2rem solid $color_primary_dark;
+            outline-offset: 0.1rem;
+        }
+
+        &.active {
+            color: $color_primary_dark;
+            background-color: rgba($color_primary_dark, 0.1);
+        }
+    }
+}
+
+// Leave room for the two-row top bar on phones
+@media (max-width: 700px) {
+    body {
+        padding-top: 11rem;
+    }
+}
+
+// Keep section headings clear of the fixed top bar when jumping via the nav
+#about,
+#experience,
+#projects,
+#education {
+    scroll-margin-top: 8rem;
+
+    @media (max-width: 700px) {
+        scroll-margin-top: 11rem;
+    }
+}

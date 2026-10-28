@@ -23,11 +23,19 @@
     </head>
     <body>
         <div id="app" v-cloak>
-        <!-- Language switch -->
-        <div class="langSwitch" role="group" :aria-label="$t('meta.switchLanguage')">
-            <button type="button" class="langSwitch__Btn" :class="{ active: locale === 'en' }" :aria-pressed="locale === 'en'" lang="en" @click="setLocale('en')">EN</button>
-            <button type="button" class="langSwitch__Btn" :class="{ active: locale === 'is' }" :aria-pressed="locale === 'is'" lang="is" @click="setLocale('is')">ÍS</button>
+        <!-- Top bar: section navigation, PDF download + language switch -->
+        <header class="topBar">
+        <nav class="topNav" :aria-label="$t('meta.navigation')">
+            <a v-for="item in navItems" :key="item.id" class="topNav__Link" :class="{ active: activeSection === item.id }" :href="'#' + item.id">{{ $t(item.label) }}</a>
+        </nav>
+        <div class="topActions">
+            <a class="pdfBtn" :href="locale === 'is' ? 'pdf/Snaevar-Dagur-Petursson-CV-IS.pdf' : 'pdf/Snaevar-Dagur-Petursson-CV-EN.pdf'" download :title="$t('meta.downloadPdf')" :aria-label="$t('meta.downloadPdf')"><i class="fas fa-download"></i> PDF</a>
+            <div class="langSwitch" role="group" :aria-label="$t('meta.switchLanguage')">
+                <button type="button" class="langSwitch__Btn" :class="{ active: locale === 'en' }" :aria-pressed="locale === 'en'" lang="en" @click="setLocale('en')">EN</button>
+                <button type="button" class="langSwitch__Btn" :class="{ active: locale === 'is' }" :aria-pressed="locale === 'is'" lang="is" @click="setLocale('is')">ÍS</button>
+            </div>
         </div>
+        </header>
 
         <!-- Portfolio -->
         <main class="portfolio__mainContainer container" id="main">
@@ -59,7 +67,7 @@
                     -->
                 </div>
             </section>
-            <section class="aboutMe__MainContainer">
+            <section class="aboutMe__MainContainer" id="about">
                 <h2 class="aboutMe__Title segmentTitle">{{ $t('about.title') }}</h2>
                 <p class="aboutMe__Text">{{ $t('about.text') }}</p>
                 <details class="aboutMe__Details">
@@ -142,7 +150,7 @@
         </main>
 
         <!-- Education -->
-        <section class="education__Section">
+        <section class="education__Section" id="experience">
             <div class="title__TitleContainer">
                 <h2 class="title__Title title__Title--first">{{ $t('sections.workExperience') }}</h2>
                 <h3 class="title__Title title__Title--second">{{ $t('sections.timeline') }}</h3>
@@ -241,7 +249,7 @@
         </section>
 
         <!-- Projects -->
-        <section class="interests__Section">
+        <section class="interests__Section" id="projects">
             <div class="title__TitleContainer">
                 <h2 class="title__Title title__Title--first">{{ $t('sections.workExperience') }}</h2>
                 <h3 class="title__Title title__Title--second">{{ $t('sections.notableProjects') }}</h3>
@@ -315,7 +323,7 @@
             </div>
         </section>
         <!-- Work Experience -->
-        <section class="timeline__Section">
+        <section class="timeline__Section" id="education">
             <div class="title__TitleContainer">
                 <h2 class="title__Title title__Title--first">{{ $t('sections.education') }}</h2>
                 <h3 class="title__Title title__Title--second">{{ $t('sections.overview') }}</h3>

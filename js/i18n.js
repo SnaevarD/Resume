@@ -3,7 +3,9 @@ var messages = {
     en: {
         meta: {
             title: 'Snævar Dagur résumé',
-            switchLanguage: 'Switch language'
+            switchLanguage: 'Switch language',
+            downloadPdf: 'Download CV as PDF',
+            navigation: 'Sections'
         },
         contact: {
             profileAlt: 'Profile picture',
@@ -101,7 +103,9 @@ var messages = {
     is: {
         meta: {
             title: 'Ferilskrá Snævars Dags',
-            switchLanguage: 'Skipta um tungumál'
+            switchLanguage: 'Skipta um tungumál',
+            downloadPdf: 'Sækja ferilskrá sem PDF',
+            navigation: 'Kaflar'
         },
         contact: {
             profileAlt: 'Prófílmynd',
