@@ -1404,8 +1404,19 @@ h2 {
     padding-top: 8rem;
     margin: 10rem auto;
 
+    .interests__SubTitle {
+        margin-top: 8rem;
+        font-size: 2rem;
+        text-transform: uppercase;
+        color: $color_primary_dark;
+    }
+
     .interests__MainContainer {
         margin-top: 10rem;
+
+        &--side {
+            margin-top: 4rem;
+        }
         display: grid;
         display: -ms-grid;
         grid-template-columns: 1fr 1fr 1fr;

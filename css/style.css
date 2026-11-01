@@ -946,6 +946,13 @@ h2 {
   max-width: 120rem;
   padding-top: 8rem;
   margin: 10rem auto; }
+  .interests__Section .interests__SubTitle {
+    margin-top: 8rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #28b485; }
+  .interests__Section .interests__MainContainer--side {
+    margin-top: 4rem !important; }
   .interests__Section .interests__MainContainer {
     margin-top: 10rem;
     display: grid;

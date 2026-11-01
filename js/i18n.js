@@ -48,6 +48,7 @@ var messages = {
             workExperience: 'Work Experience',
             timeline: 'Timeline',
             notableProjects: 'Notable Projects',
+            sideProjects: 'Side projects',
             education: 'Education',
             overview: 'Overview',
             recommendations: 'Recommendations',
@@ -96,7 +97,9 @@ var messages = {
             byko1: "Contributed to BYKO's webstore with the Advania team",
             byko2: "Supported the company's expansion into online sales",
             arion1: "Iceland's first online loan affordability assessment",
-            arion2: 'Customers complete the process online in minutes'
+            arion2: 'Customers complete the process online in minutes',
+            framtidarsyn1: 'Full-stack web development & e-commerce for an educational publisher',
+            framtidarsyn2: 'Online book sales and a teacher resource portal on Nuxt, Vue and Supabase'
         },
         education: {
             reykjavikUniversity: 'Reykjavík University',
@@ -155,6 +158,7 @@ var messages = {
             workExperience: 'Starfsreynsla',
             timeline: 'Tímalína',
             notableProjects: 'Helstu verkefni',
+            sideProjects: 'Hliðarverkefni',
             education: 'Menntun',
             overview: 'Yfirlit',
             recommendations: 'Meðmæli',
@@ -203,7 +207,9 @@ var messages = {
             byko1: 'Tók þátt í þróun vefverslunar BYKO með teymi Advania',
             byko2: 'Öflug leitarvél og réttar lagerupplýsingar',
             arion1: 'Fyrsta rafræna greiðslumatið á Íslandi',
-            arion2: 'Greiðslumat á netinu á örfáum mínútum'
+            arion2: 'Greiðslumat á netinu á örfáum mínútum',
+            framtidarsyn1: 'Full-stack vefþróun og vefverslun fyrir bókaútgáfu',
+            framtidarsyn2: 'Netverslun með bækur og kennaragátt í Nuxt, Vue og Supabase'
         },
         education: {
             reykjavikUniversity: 'Háskólinn í Reykjavík',
