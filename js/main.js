@@ -37,6 +37,7 @@
                 { id: 'about', label: 'about.title' },
                 { id: 'experience', label: 'sections.workExperience' },
                 { id: 'projects', label: 'sections.notableProjects' },
+                { id: 'side-projects', label: 'sections.sideProjects' },
                 { id: 'education', label: 'sections.education' }
             ];
             var activeSection = Vue.ref('about');
