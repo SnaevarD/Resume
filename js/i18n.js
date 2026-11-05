@@ -99,7 +99,9 @@ var messages = {
             arion1: "Iceland's first online loan affordability assessment",
             arion2: 'Customers complete the process online in minutes',
             framtidarsyn1: 'Full-stack web development & e-commerce for an educational publisher',
-            framtidarsyn2: 'Online book sales and a teacher resource portal on Nuxt, Vue and Supabase'
+            framtidarsyn2: 'Online book sales and a teacher resource portal on Nuxt, Vue and Supabase',
+            shiftpilot1: "Designing and building a scheduling platform to replace a client's spreadsheet",
+            shiftpilot2: 'AI assistant on Claude that plans shifts and finds cover'
         },
         education: {
             reykjavikUniversity: 'Reykjavík University',
@@ -209,7 +211,9 @@ var messages = {
             arion1: 'Fyrsta rafræna greiðslumatið á Íslandi',
             arion2: 'Greiðslumat á netinu á örfáum mínútum',
             framtidarsyn1: 'Full-stack vefþróun og vefverslun fyrir bókaútgáfu',
-            framtidarsyn2: 'Netverslun með bækur og kennaragátt í Nuxt, Vue og Supabase'
+            framtidarsyn2: 'Netverslun með bækur og kennaragátt í Nuxt, Vue og Supabase',
+            shiftpilot1: 'Hönnun og smíði vaktaplanskerfis sem leysir töflureikni viðskiptavinar af hólmi',
+            shiftpilot2: 'Gervigreindaraðstoð á Claude sem skipuleggur vaktir og finnur afleysingu'
         },
         education: {
             reykjavikUniversity: 'Háskólinn í Reykjavík',
