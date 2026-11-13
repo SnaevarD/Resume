@@ -85,10 +85,10 @@
             item.addEventListener('focus', fit);
         });
 
-        // Smoothly expand/collapse the About me subsections
+        // Smoothly expand/collapse the About me subsections and the non-software work
         var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-        document.querySelectorAll('.aboutMe__Details').forEach(function (details) {
-            var content = details.querySelector('.aboutMe__Text');
+        document.querySelectorAll('.aboutMe__Details, .education__Details').forEach(function (details) {
+            var content = details.querySelector('.aboutMe__Text, .education__DetailsContent');
             var heightAnim = null;
             var fadeAnim = null;
             var closing = false;

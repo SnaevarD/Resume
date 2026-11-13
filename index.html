@@ -69,7 +69,7 @@
             </section>
             <section class="aboutMe__MainContainer" id="about">
                 <h2 class="aboutMe__Title segmentTitle">{{ $t('about.title') }}</h2>
-                <p class="aboutMe__Text" v-for="(para, i) in $t('about.text').split('\n\n')" :key="i">{{ para }}</p>
+                <p class="aboutMe__Text" v-for="(para, i) in $t('about.text').split('\n\n')" :key="i" v-html="para.replace(/\*\*(.+?)\*\*/g, '<span class=aboutMe__Highlight>$1</span>')"></p>
                 <details class="aboutMe__Details">
                     <summary class="aboutMe__Summary">{{ $t('about.familyTitle') }}</summary>
                     <p class="aboutMe__Text">{{ $t('about.family') }}</p>
@@ -83,66 +83,44 @@
                 <div class="skills__MainContainer">
                     <h2 class="skills__Title segmentTitle">{{ $t('skills.title') }}</h2>
                     <div class="skills__Container">
-                        <div class="skills__Item" tabindex="0" :data-tooltip="$t('skills.vue')">
-                            <p class="skills__Text">VueJS</p>
+                        <div class="skills__Item skills__Item--list" tabindex="0" :data-tooltip="$t('skills.ai')">
+                            <p class="skills__Text">{{ $t('skills.aiLabel') }}</p>
                         </div>
-                        <div class="skills__Item" tabindex="0" :data-tooltip="$t('skills.nuxt')">
-                            <p class="skills__Text">Nuxt</p>
+                        <div class="skills__Item" tabindex="0" :data-tooltip="$t('skills.architecture')">
+                            <p class="skills__Text">{{ $t('skills.architectureLabel') }}</p>
                         </div>
-                        <div class="skills__Item" tabindex="0" :data-tooltip="$t('skills.react')">
-                            <p class="skills__Text">ReactJS</p>
+                        <div class="skills__Item" tabindex="0" :data-tooltip="$t('skills.security')">
+                            <p class="skills__Text">{{ $t('skills.securityLabel') }}</p>
                         </div>
-                        <div class="skills__Item" tabindex="0" :data-tooltip="$t('skills.angular')">
-                            <p class="skills__Text">AngularJS</p>
+                        <div class="skills__Item skills__Item--list" tabindex="0" :data-tooltip="$t('skills.frameworks')">
+                            <p class="skills__Text">{{ $t('skills.frameworksLabel') }}</p>
                         </div>
-                        <div class="skills__Item" tabindex="0" :data-tooltip="$t('skills.typescript')">
-                            <p class="skills__Text">TypeScript</p>
+                        <div class="skills__Item skills__Item--list" tabindex="0" :data-tooltip="$t('skills.webStandards')">
+                            <p class="skills__Text">{{ $t('skills.webStandardsLabel') }}</p>
                         </div>
-                        <div class="skills__Item" tabindex="0" :data-tooltip="$t('skills.csharp')">
-                            <p class="skills__Text">C#</p>
+                        <div class="skills__Item skills__Item--list" tabindex="0" :data-tooltip="$t('skills.cms')">
+                            <p class="skills__Text">{{ $t('skills.cmsLabel') }}</p>
                         </div>
-                        <div class="skills__Item" tabindex="0" :data-tooltip="$t('skills.tailwind')">
-                            <p class="skills__Text">Tailwind CSS</p>
+                        <div class="skills__Item skills__Item--list" tabindex="0" :data-tooltip="$t('skills.programming')">
+                            <p class="skills__Text">{{ $t('skills.programmingLabel') }}</p>
                         </div>
-                        <div class="skills__Item" tabindex="0" :data-tooltip="$t('skills.sass')">
-                            <p class="skills__Text">Sass</p>
+                        <div class="skills__Item skills__Item--list" tabindex="0" :data-tooltip="$t('skills.cssFrameworks')">
+                            <p class="skills__Text">{{ $t('skills.cssFrameworksLabel') }}</p>
                         </div>
-                        <div class="skills__Item" tabindex="0" :data-tooltip="$t('skills.less')">
-                            <p class="skills__Text">Less</p>
+                        <div class="skills__Item skills__Item--list" tabindex="0" :data-tooltip="$t('skills.ecommerce')">
+                            <p class="skills__Text">{{ $t('skills.ecommerceLabel') }}</p>
                         </div>
-                        <div class="skills__Item" tabindex="0" :data-tooltip="$t('skills.dynamicweb')">
-                            <p class="skills__Text">DynamicWeb</p>
+                        <div class="skills__Item skills__Item--list" tabindex="0" :data-tooltip="$t('skills.hosting')">
+                            <p class="skills__Text">{{ $t('skills.hostingLabel') }}</p>
                         </div>
-                        <div class="skills__Item" tabindex="0" :data-tooltip="$t('skills.lisa')">
-                            <p class="skills__Text">LiSA</p>
+                        <div class="skills__Item" tabindex="0" :data-tooltip="$t('skills.projectManagement')">
+                            <p class="skills__Text">{{ $t('skills.projectManagementLabel') }}</p>
                         </div>
-                        <div class="skills__Item" tabindex="0" :data-tooltip="$t('skills.mssql')">
-                            <p class="skills__Text">MSSQL</p>
+                        <div class="skills__Item" tabindex="0" :data-tooltip="$t('skills.publicSpeaking')">
+                            <p class="skills__Text">{{ $t('skills.publicSpeakingLabel') }}</p>
                         </div>
-                    </div>
-                </div>
-                <div class="languages__MainContainer">
-                    <h2 class="languages__Title segmentTitle">{{ $t('languages.title') }}</h2>
-                    <div class="languages__Container">
-                        <div class="languages__Item">
-                            <p class="languages__Text">{{ $t('languages.icelandic') }} <span class="languages__Text--small">{{ $t('languages.native') }}</span></p>
-                            <div class="languages__BoxContainer">
-                                <span class="languages__Box active"></span>
-                                <span class="languages__Box active"></span>
-                                <span class="languages__Box active"></span>
-                                <span class="languages__Box active"></span>
-                                <span class="languages__Box active"></span>
-                            </div>
-                        </div>
-                        <div class="languages__Item">
-                            <p class="languages__Text">{{ $t('languages.english') }} <span class="languages__Text--small">{{ $t('languages.professional') }}</span></p>
-                            <div class="languages__BoxContainer">
-                                <span class="languages__Box active"></span>
-                                <span class="languages__Box active"></span>
-                                <span class="languages__Box active"></span>
-                                <span class="languages__Box active"></span>
-                                <span class="languages__Box"></span>
-                            </div>
+                        <div class="skills__Item skills__Item--list" tabindex="0" :data-tooltip="$t('skills.languages')">
+                            <p class="skills__Text">{{ $t('skills.languagesLabel') }}</p>
                         </div>
                     </div>
                 </div>
@@ -165,7 +143,7 @@
                     <div class="education__InfoContainer">
                         <p class="education__InfoTitle">{{ $t('jobs.softwareDeveloper') }}</p>
                         <p class="education__InfoCompany">Aftra</p>
-                        <ul class="education__InfoList"><li>{{ $t('jobs.aftra1') }}</li><li>{{ $t('jobs.aftra2') }}</li><li>{{ $t('jobs.aftra3') }}</li></ul>
+                        <ul class="education__InfoList"><li><span class="education__Highlight">{{ $t('jobs.aftra3Lead') }}</span>{{ $t('jobs.aftra3') }}</li><li>{{ $t('jobs.aftra1') }}</li></ul>
                     </div>
                 </div>
                 <div class="education__Item">
@@ -176,7 +154,7 @@
                     <div class="education__InfoContainer">
                         <p class="education__InfoTitle">{{ $t('jobs.softwareDeveloper') }}</p>
                         <p class="education__InfoCompany">Syndis</p>
-                        <ul class="education__InfoList"><li>{{ $t('jobs.syndis1') }}</li></ul>
+                        <ul class="education__InfoList"><li>{{ $t('jobs.syndis1') }}</li><li>{{ $t('jobs.aftra2') }}<span class="education__Highlight">{{ $t('jobs.aftra2Highlight') }}</span>{{ $t('jobs.aftra2End') }}</li></ul>
                     </div>
                 </div>
                 <div class="education__Item">
@@ -187,7 +165,7 @@
                     <div class="education__InfoContainer">
                         <p class="education__InfoTitle">{{ $t('jobs.seniorSoftwareDeveloper') }}</p>
                         <p class="education__InfoCompany">Advania</p>
-                        <ul class="education__InfoList"><li>{{ $t('jobs.advaniaSenior1') }}</li><li>{{ $t('jobs.advaniaSenior2') }}</li><li>{{ $t('jobs.advaniaSenior3') }}</li><li>{{ $t('jobs.advaniaSenior4') }}</li></ul>
+                        <ul class="education__InfoList"><li><span class="education__Highlight">{{ $t('jobs.advaniaSenior1Lead') }}</span>{{ $t('jobs.advaniaSenior1') }}<span class="education__Highlight">{{ $t('jobs.advaniaSenior1Highlight') }}</span>{{ $t('jobs.advaniaSenior1End') }}</li><li>{{ $t('jobs.advaniaSenior2') }}</li><li>{{ $t('jobs.advaniaSenior4') }}</li></ul>
                     </div>
                 </div>
                 <div class="education__Item">
@@ -198,54 +176,47 @@
                     <div class="education__InfoContainer">
                         <p class="education__InfoTitle">{{ $t('jobs.juniorSoftwareDeveloper') }}</p>
                         <p class="education__InfoCompany">Advania</p>
-                        <p class="education__InfoText">{{ $t('jobs.advaniaJunior') }}</p>
+                        <ul class="education__InfoList"><li>{{ $t('jobs.advaniaJunior') }}</li><li>{{ $t('jobs.advaniaSenior3') }}</li></ul>
                     </div>
                 </div>
                 <div class="education__Item">
                     <div class="education_TimeContainer">
                         <h2 class="education__TimeTitle">2015</h2>
-                        <p class="education__TimeDate">{{ $t('dates.dec') }}</p>
                     </div>
                     <div class="education__InfoContainer">
                         <p class="education__InfoTitle">{{ $t('jobs.teachingAssistant') }}</p>
                         <p class="education__InfoCompany">{{ $t('jobs.reykjavikUniversity') }}</p>
-                        <p class="education__InfoText">{{ $t('jobs.ruSeminar') }}</p>
-                    </div>
-                </div>
-                <div class="education__Item">
-                    <div class="education_TimeContainer">
-                        <h2 class="education__TimeTitle">2015</h2>
-                        <p class="education__TimeDate">{{ $t('dates.janToMay') }}</p>
-                    </div>
-                    <div class="education__InfoContainer">
-                        <p class="education__InfoTitle">{{ $t('jobs.teachingAssistant') }}</p>
-                        <p class="education__InfoCompany">{{ $t('jobs.reykjavikUniversity') }}</p>
-                        <p class="education__InfoText">{{ $t('jobs.ruWebDev') }}</p>
-                    </div>
-                </div>
-                <div class="education__Item">
-                    <div class="education_TimeContainer">
-                        <h2 class="education__TimeTitle">2012</h2>
-                        <p class="education__TimeDate">{{ $t('dates.to') }} 2016</p>
-                    </div>
-                    <div class="education__InfoContainer">
-                        <p class="education__InfoTitle">{{ $t('jobs.pavementWorker') }}</p>
-                        <p class="education__InfoCompany">Hlaðbær Colas</p>
-                        <p class="education__InfoText">{{ $t('jobs.colas') }}</p>
-                    </div>
-                </div>
-                <div class="education__Item">
-                    <div class="education_TimeContainer">
-                        <h2 class="education__TimeTitle">2010</h2>
-                        <p class="education__TimeDate">{{ $t('dates.to') }} 2016</p>
-                    </div>
-                    <div class="education__InfoContainer">
-                        <p class="education__InfoTitle">{{ $t('jobs.assistantGuide') }}</p>
-                        <p class="education__InfoCompany">Ultima Thule</p>
-                        <p class="education__InfoText">{{ $t('jobs.ultimaThule') }}</p>
+                        <ul class="education__InfoList"><li>{{ $t('jobs.ruWebDev') }}</li><li>{{ $t('jobs.ruSeminar') }}</li></ul>
                     </div>
                 </div>
             </div>
+            <details class="education__Details">
+                <summary class="education__Summary">{{ $t('sections.otherWork') }}</summary>
+                <div class="education__MainContainer education__DetailsContent">
+                    <div class="education__Item">
+                        <div class="education_TimeContainer">
+                            <h2 class="education__TimeTitle">2012</h2>
+                            <p class="education__TimeDate">{{ $t('dates.to') }} 2016</p>
+                        </div>
+                        <div class="education__InfoContainer">
+                            <p class="education__InfoTitle">{{ $t('jobs.pavementWorker') }}</p>
+                            <p class="education__InfoCompany">Hlaðbær Colas</p>
+                            <p class="education__InfoText">{{ $t('jobs.colas') }}</p>
+                        </div>
+                    </div>
+                    <div class="education__Item">
+                        <div class="education_TimeContainer">
+                            <h2 class="education__TimeTitle">2010</h2>
+                            <p class="education__TimeDate">{{ $t('dates.to') }} 2016</p>
+                        </div>
+                        <div class="education__InfoContainer">
+                            <p class="education__InfoTitle">{{ $t('jobs.assistantGuide') }}</p>
+                            <p class="education__InfoCompany">Ultima Thule</p>
+                            <p class="education__InfoText">{{ $t('jobs.ultimaThule') }}</p>
+                        </div>
+                    </div>
+                </div>
+            </details>
         </section>
 
         <!-- Projects -->
@@ -335,13 +306,13 @@
                     </figcaption>
                 </figure>
                 <figure class="interests__Item">
-                    <div class="interests__Item__Img" style="background-image: url('img/shiftpilot.jpg')"></div>
+                    <div class="interests__Item__Img" style="background-image: url('img/reporting-system.jpg')"></div>
                     <figcaption class="interests__Item__Content">
-                        <h2 class="interests__Item__Title">ShiftPilot</h2>
+                        <h2 class="interests__Item__Title twoLines interests__Item__Title--long">{{ $t('projects.reportingSystemTitle') }}</h2>
                         <div class="interests__Item__Icon"><i class="fas fa-calendar-alt"></i></div>
                         <ul class="interests__Item__List">
-                            <li class="interests__Item__ListItem">{{ $t('projects.shiftpilot1') }}</li>
-                            <li class="interests__Item__ListItem">{{ $t('projects.shiftpilot2') }}</li>
+                            <li class="interests__Item__ListItem">{{ $t('projects.reportingSystem1') }}</li>
+                            <li class="interests__Item__ListItem">{{ $t('projects.reportingSystem2') }}</li>
                         </ul>
                     </figcaption>
                 </figure>
