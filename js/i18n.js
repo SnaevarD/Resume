@@ -16,7 +16,7 @@ var messages = {
         },
         about: {
             title: 'About me',
-            text: 'Senior Software Developer with a BSc in Computer Science and 10+ years of experience building web products in the e-commerce and cybersecurity sectors. Experienced in delivering secure, well-structured software, leading frontend teams, and working directly with clients from early planning through launch. **Uses AI tools daily across coding, testing, and deployment to ship reliable code faster.**',
+            text: 'I am a Senior Software Developer with a BSc in Computer Science and over 10 years of experience building web products in the e-commerce and cybersecurity sectors.\n\nFocused on delivering secure, maintainable software, with experience leading frontend teams and working directly with clients from early planning through launch.\n\nAI tools are a natural part of the workflow, integrated across everything from coding and testing to deployment.',
             familyTitle: 'Family',
             family: 'I live with my partner, Sigrún Gunnarsdóttir, who works as an Account Manager at Landsnet. Together, we have two children, Lára (born in 2021) and Gunnar Óliver (born in 2026).',
             interestsTitle: 'Interests & Hobbies',
@@ -150,7 +150,7 @@ var messages = {
         },
         about: {
             title: 'Um mig',
-            text: 'Senior hugbúnaðarsérfræðingur með BSc-gráðu í tölvunarfræði og yfir tíu ára reynslu af þróun veflausna á sviði vefverslana og netöryggis. Hef reynslu af smíði öruggs og vel uppbyggðs hugbúnaðar, að leiða framendateymi og vinna náið með viðskiptavinum frá fyrstu skipulagningu til útgáfu. **Nýti gervigreindartól daglega við forritun, prófanir og útgáfu til að skila áreiðanlegum kóða hraðar.**',
+            text: 'Ég er senior hugbúnaðarsérfræðingur með BSc-gráðu í tölvunarfræði og yfir tíu ára reynslu af þróun veflausna á sviði vefverslana og netöryggis.\n\nÉg legg áherslu á öruggan og viðhaldanlegan hugbúnað og hef reynslu af því að leiða framendateymi og vinna náið með viðskiptavinum frá fyrstu skipulagningu til útgáfu.\n\nGervigreindartól eru eðlilegur hluti af vinnuferlinu og nýtast í öllu frá forritun og prófunum til útgáfu.',
             familyTitle: 'Fjölskylda',
             family: 'Ég bý með sambýliskonu minni, Sigrúnu Gunnarsdóttur, sem starfar sem viðskiptastjóri hjá Landsneti. Saman eigum við tvö börn, Láru (fædd 2021) og Gunnar Óliver (fæddur 2026).',
             interestsTitle: 'Áhugamál',
